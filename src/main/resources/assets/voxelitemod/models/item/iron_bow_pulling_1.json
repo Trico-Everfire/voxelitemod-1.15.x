@@ -1,0 +1,7 @@
+
+{
+"parent": "voxelitemod:item/iron_bow",
+"textures": {
+"layer0": "voxelitemod:items/iron_bow_pulling_1"
+}
+}

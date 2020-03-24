@@ -1,0 +1,34 @@
+{
+    "type": "gearbench",
+    "pattern":
+    [
+        " SR",
+        " QS",
+        "S  "
+    ],
+   
+    "key":
+    {
+        "R":
+        {
+            "item": "minecraft:redstone"
+        },
+        
+        
+          "Q":
+        {
+            "item": "minecraft:quartz"
+        },
+        
+               "S":
+        {
+            "item": "voxelitemod:iron_stick"
+        }
+    },
+   
+    "result":
+    {
+        "item": "voxelitemod:redstone_zapper",
+        "count": 1
+    }
+}

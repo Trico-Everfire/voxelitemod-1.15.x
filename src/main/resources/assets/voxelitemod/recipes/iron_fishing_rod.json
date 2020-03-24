@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "  I",
+        " IS",
+        "I S"
+    ],
+   
+    "key":
+    {
+        "I":
+        {
+            "item": "voxelitemod:iron_stick"
+        },
+        "S":
+        {
+            "item": "minecraft:string"
+        }
+    },
+   
+    "result":
+    {
+        "item": "voxelitemod:iron_fishing_rod",
+        "count": 1
+    }
+}

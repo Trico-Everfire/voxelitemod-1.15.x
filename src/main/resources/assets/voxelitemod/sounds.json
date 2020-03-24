@@ -1,0 +1,26 @@
+{
+    "entity.slug.ambient":{
+     "catagory":"entity",
+     "subtitle": "entity.slug.slugcry",
+     "sounds":[{"name": "voxelitemod:entity/slug/slugcry1","streaming":true},{"name": "voxelitemod:entity/slug/slugcry2","streaming":true},{"name": "voxelitemod:entity/slug/slugcry3","streaming":true}]
+    
+    },
+        "entity.slug.hurt":{
+     "catagory":"entity",
+     "subtitle": "entity.slug.slughurt",
+     "sounds":[{"name": "voxelitemod:entity/slug/slughurt1","streaming":true},{"name": "voxelitemod:entity/slug/slughurt2","streaming":true}]
+    
+    },
+        "entity.slug.death":{
+     "catagory":"entity",
+     "subtitle": "entity.slug.slugdeath",
+     "sounds":[{"name": "voxelitemod:entity/slug/slugdeath","streaming":true}]
+    
+    },
+            "entity.slug.sing":{
+     "catagory":"entity",
+     "subtitle": "entity.slug.slugsing",
+     "sounds":[{"name": "voxelitemod:entity/slug/slugsing","streaming":true}]
+    
+    }
+}

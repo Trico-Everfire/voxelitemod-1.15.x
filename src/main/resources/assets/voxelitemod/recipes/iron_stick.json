@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "S ",
+        "S "
+    ],
+   
+    "key":
+    {
+        "S":
+        {
+            "item": "minecraft:iron_ingot"
+        }
+    },
+   
+    "result":
+    {
+        "item": "voxelitemod:iron_stick",
+        "count": 4
+    }
+}

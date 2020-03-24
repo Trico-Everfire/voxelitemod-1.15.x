@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+ 
+    "ingredients":
+    [
+ 
+    {
+      "item": "voxelitemod:avokinate_block"
+    }
+   
+    ],
+ 
+    "result":
+    {
+        "item": "voxelitemod:avokinate_crystal",
+        "count": 9
+    }
+}

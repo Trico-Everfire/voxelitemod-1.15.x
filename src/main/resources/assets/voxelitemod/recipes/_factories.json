@@ -1,0 +1,5 @@
+{
+"recipes": {
+    "gearbench": "com.tricoeverfire.voxelite.crafting.gearbenchFactory.GearBenchRecipeFactory"
+    }
+}

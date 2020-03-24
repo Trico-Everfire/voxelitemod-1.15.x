@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "axis=y":  { "model": "voxelitemod:block/voxelized_log" },
+        "axis=z":   { "model": "voxelitemod:block/voxelized_log", "x": 90 },
+        "axis=x":   { "model": "voxelitemod:block/voxelized_log", "x": 90, "y": 90 },
+        "axis=none": { "model": "voxelitemod:block/voxelized_bark" }
+    }
+}

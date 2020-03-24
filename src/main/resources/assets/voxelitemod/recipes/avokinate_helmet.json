@@ -1,0 +1,33 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "DDD",
+        "CHC",
+        "   "
+    ],
+   
+    "key":
+    {
+        "H":
+        {
+            "item": "minecraft:diamond_helmet"
+        },
+         "C":
+        {
+            "item": "voxelitemod:avokinate_crystal"
+        },
+         "D":
+        {
+            "item": "voxelitemod:avokinate_dust"
+        }
+        
+    },
+   
+    "result":
+    {
+        "item": "voxelitemod:avokinate_helmet",
+        "count": 1
+    }
+}

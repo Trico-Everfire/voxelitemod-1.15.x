@@ -1,0 +1,35 @@
+{
+    "type": "gearbench",
+    "pattern":
+    [
+        "CC",
+        "M ",
+        "S ",
+        "S "
+    ],
+   
+    "key":
+    {
+        "C":
+        {
+            "item": "voxelitemod:charged_avokinate_crystal"
+        },
+        
+        
+          "M":
+        {
+            "item": "voxelitemod:avokinate_medal"
+        },
+        
+               "S":
+        {
+            "item": "voxelitemod:iron_stick"
+        }
+    },
+   
+    "result":
+    {
+        "item": "voxelitemod:charged_avokinate_hoe",
+        "count": 1
+    }
+}

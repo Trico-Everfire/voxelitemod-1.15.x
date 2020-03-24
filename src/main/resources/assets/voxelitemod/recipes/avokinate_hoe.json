@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        " CC",
+        " S ",
+        " S "
+    ],
+   
+    "key":
+    {
+        "C":
+        {
+            "item": "voxelitemod:avokinate_crystal"
+        },
+        
+               "S":
+        {
+            "item": "voxelitemod:iron_stick"
+        }
+    },
+   
+    "result":
+    {
+        "item": "voxelitemod:avokinate_hoe",
+        "count": 1
+    }
+}

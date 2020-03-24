@@ -1,0 +1,9 @@
+
+    {
+        "parent": "block/door_top",
+        "textures": {
+            "bottom": "voxelitemod:blocks/locked_blue_dungeon_door_bottom",
+            "top": "voxelitemod:blocks/locked_blue_dungeon_door_top"
+        }
+    }
+    

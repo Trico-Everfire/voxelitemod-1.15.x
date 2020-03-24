@@ -1,0 +1,5 @@
+{"parent":"item/handheld","textures":{
+"layer0":"voxelitemod:items/breaker_blade",
+"layer1":"voxelitemod:items/breaker_blade_layer1"
+}
+}

@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        " N ",
+        "NCN",
+        " N "
+    ],
+   
+    "key":
+    {
+        "C":
+        {
+            "item": "voxelitemod:avokinate_crystal"
+        },
+         "N":
+        {
+            "item": "minecraft:iron_nugget"
+        }
+    },
+   
+    "result":
+    {
+        "item": "voxelitemod:avokinate_medal",
+        "count": 1
+    }
+}

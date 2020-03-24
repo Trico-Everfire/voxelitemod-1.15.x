@@ -1,0 +1,20 @@
+{
+"parent":"item/handheld","textures":{
+        
+   "layer0":"voxelitemod:items/redstone_zapper"
+        },
+            "overrides": [
+        {
+            "predicate": {
+                "charge": 0
+            },
+            "model": "voxelitemod:item/redstone_zapper_unloaded"
+        },
+        {
+            "predicate": {
+                "charge": 1
+            },
+            "model": "voxelitemod:item/redstone_zapper_loaded"
+        }
+    ]
+}

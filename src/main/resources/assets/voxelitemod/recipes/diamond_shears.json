@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "D ",
+        "ID"
+    ],
+   
+    "key":
+    {
+        "D":
+        {
+            "item": "minecraft:diamond"
+        },
+         "I":
+        {
+            "item": "minecraft:iron_ingot"
+        }
+    },
+   
+    "result":
+    {
+        "item": "voxelitemod:diamond_shears",
+        "count": 1
+    }
+}

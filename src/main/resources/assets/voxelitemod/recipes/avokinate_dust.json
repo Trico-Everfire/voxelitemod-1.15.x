@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+ 
+    "ingredients":
+    [
+ 
+    {
+      "item": "voxelitemod:avokinate_crystal"
+    },
+    {
+      "item": "voxelitemod:avokinate_crystal"
+    }
+   
+    ],
+ 
+    "result":
+    {
+        "item": "voxelitemod:avokinate_dust",
+        "count": 2
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "D D",
+        "CPC",
+        "DMD"
+    ],
+   
+    "key":
+    {
+        "P":
+        {
+            "item": "minecraft:diamond_chestplate"
+        },
+         "C":
+        {
+            "item": "voxelitemod:avokinate_crystal"
+        },
+         "D":
+        {
+            "item": "voxelitemod:avokinate_dust"
+        },
+         "M":
+        {
+            "item": "voxelitemod:avokinate_medal"
+        }
+        
+    },
+   
+    "result":
+    {
+        "item": "voxelitemod:avokinate_chestplate",
+        "count": 1
+    }
+}

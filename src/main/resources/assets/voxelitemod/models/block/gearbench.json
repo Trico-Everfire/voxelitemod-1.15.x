@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "voxelitemod:blocks/gear_bench_top",
+        "down": "voxelitemod:blocks/gear_bench_bottom",
+        "up": "voxelitemod:blocks/gear_bench_top",
+        "north": "voxelitemod:blocks/gear_bench_side_1",
+        "east": "voxelitemod:blocks/gear_bench_side_2",
+        "south": "voxelitemod:blocks/gear_bench_side_2",
+        "west": "voxelitemod:blocks/gear_bench_side_1"
+    }
+}

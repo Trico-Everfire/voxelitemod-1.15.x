@@ -1,0 +1,11 @@
+
+    {
+        "parent": "block/stairs",
+        "textures": {
+            "bottom": "voxelitemod:blocks/blue_dungeon_floor",
+            "top": "voxelitemod:blocks/blue_dungeon_floor",
+            "side": "voxelitemod:blocks/blue_dungeon_floor"
+        }
+    }
+    
+    

@@ -1,0 +1,9 @@
+
+    {
+        "parent": "block/door_bottom_rh",
+        "textures": {
+            "bottom": "voxelitemod:blocks/locked_black_stone_door_bottom",
+            "top": "voxelitemod:blocks/locked_black_stone_door_top"
+        }
+    }
+    

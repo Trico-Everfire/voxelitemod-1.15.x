@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "axis=y":  { "model": "voxelitemod:block/blue_dungeon_wall" },
+        "axis=z":   { "model": "voxelitemod:block/blue_dungeon_wall", "x": 90 },
+        "axis=x":   { "model": "voxelitemod:block/blue_dungeon_wall", "x": 90, "y": 90 }
+    }
+}
+

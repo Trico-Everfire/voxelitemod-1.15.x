@@ -1,0 +1,33 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "   ",
+        "DBD",
+        "C C"
+    ],
+   
+    "key":
+    {
+        "B":
+        {
+            "item": "minecraft:diamond_boots"
+        },
+         "C":
+        {
+            "item": "voxelitemod:avokinate_crystal"
+        },
+         "D":
+        {
+            "item": "voxelitemod:avokinate_dust"
+        }
+        
+    },
+   
+    "result":
+    {
+        "item": "voxelitemod:avokinate_boots",
+        "count": 1
+    }
+}

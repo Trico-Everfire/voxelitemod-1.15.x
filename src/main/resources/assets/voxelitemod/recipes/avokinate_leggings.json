@@ -1,0 +1,33 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "CLC",
+        "D D",
+        "D D"
+    ],
+   
+    "key":
+    {
+        "L":
+        {
+            "item": "minecraft:diamond_leggings"
+        },
+         "C":
+        {
+            "item": "voxelitemod:avokinate_crystal"
+        },
+         "D":
+        {
+            "item": "voxelitemod:avokinate_dust"
+        }
+        
+    },
+   
+    "result":
+    {
+        "item": "voxelitemod:avokinate_leggings",
+        "count": 1
+    }
+}

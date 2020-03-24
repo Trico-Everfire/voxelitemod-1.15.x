@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "CCC",
+        "CCC",
+        "CCC"
+    ],
+   
+    "key":
+    {
+        "C":
+        {
+            "item": "voxelitemod:avokinate_crystal"
+        }
+    },
+   
+    "result":
+    {
+        "item": "voxelitemod:avokinate_block",
+        "count": 1
+    }
+}

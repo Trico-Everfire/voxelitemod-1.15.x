@@ -1,0 +1,6 @@
+{
+"parent": "voxelitemod:item/iron_fishing_rod",
+"textures": {
+"layer0": "voxelitemod:items/iron_fishing_rod_cast"
+}
+}

@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        " S ",
+        "SGS",
+        " S "
+    ],
+   
+    "key":
+    {
+        "S":
+        {
+            "item": "voxelitemod:iron_stick"
+        },
+         "G":
+        {
+            "item": "minecraft:glass"
+        }
+    },
+   
+    "result":
+    {
+        "item": "voxelitemod:reinforced_glass",
+        "count": 1
+    }
+}

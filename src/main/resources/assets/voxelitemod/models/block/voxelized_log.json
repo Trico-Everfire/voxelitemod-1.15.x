@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "voxelitemod:blocks/voxelized_log_top",
+        "side": "voxelitemod:blocks/voxelized_log_side"
+    }
+}

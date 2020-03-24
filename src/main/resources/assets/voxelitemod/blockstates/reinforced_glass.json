@@ -1,0 +1,5 @@
+{
+    "variants":{
+        "": { "model": "voxelitemod:block/reinforced_glass"}
+    }
+}

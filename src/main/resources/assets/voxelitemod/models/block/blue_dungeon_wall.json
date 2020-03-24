@@ -1,0 +1,9 @@
+
+        {
+            "parent": "block/cube_column",
+            "textures": {
+                "end": "voxelitemod:blocks/blue_dungeon_wall_top",
+                "side": "voxelitemod:blocks/blue_dungeon_wall_side"
+            }
+        }
+        

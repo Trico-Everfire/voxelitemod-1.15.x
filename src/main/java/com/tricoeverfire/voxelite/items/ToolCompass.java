@@ -79,7 +79,7 @@ public class ToolCompass extends Item{
 	               this.rota *= 0.8D;
 	               this.rotation = MathHelper.positiveModulo(this.rotation + this.rota, 1.0D);
 	            }
-
+	            
 	            return this.rotation;
 	         }
 

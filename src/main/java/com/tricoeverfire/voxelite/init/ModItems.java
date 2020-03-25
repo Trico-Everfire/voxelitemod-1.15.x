@@ -11,6 +11,7 @@ import com.tricoeverfire.voxelite.items.FoodItem;
 import com.tricoeverfire.voxelite.items.ItemBase;
 import com.tricoeverfire.voxelite.items.RedstoneZapper;
 import com.tricoeverfire.voxelite.items.ToolAxe;
+import com.tricoeverfire.voxelite.items.ToolCompass;
 import com.tricoeverfire.voxelite.items.ToolHammer;
 import com.tricoeverfire.voxelite.items.ToolHoe;
 import com.tricoeverfire.voxelite.items.ToolPickaxe;
@@ -92,7 +93,7 @@ public class ModItems {
 	public static final Item BLUE_GEM = new ItemBase("blue_gem");
 	public static final Item PURPLE_GEM = new ItemBase("purple_gem");
 	public static final Item YELLOW_GEM = new ItemBase("yellow_gem");
-	//public static final Item GOLDEN_COMPASS = new ToolCompass("golden_compass");
+	public static final Item GOLDEN_COMPASS = new ToolCompass("golden_compass");
 	
 	
 	//tools

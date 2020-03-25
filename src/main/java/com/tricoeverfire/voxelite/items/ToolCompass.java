@@ -4,6 +4,7 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.ImmutableMap;
 import com.tricoeverfire.voxelite.init.ModBlocks;
+import com.tricoeverfire.voxelite.init.ModItemGroups;
 import com.tricoeverfire.voxelite.init.ModItems;
 
 import net.minecraft.block.Block;
@@ -23,6 +24,13 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.animation.ITimeValue;
 
 public class ToolCompass extends Item{
+	
+	public ToolCompass(String name) {
+		this(name, new Properties().maxStackSize(1).group(ModItemGroups.voxelitemoditems));
+	}
+	
+	
+	
 	public ToolCompass(String name,Properties props)
     {
 		super(props);
@@ -100,7 +108,7 @@ public class ToolCompass extends Item{
 
 	@Override
 	public ImmutableMap<String, ITimeValue> getAnimationParameters(ItemStack stack, World world, LivingEntity entity) {
-		// TODO Auto-generated method stub
+		
 		return super.getAnimationParameters(stack, world, entity);
 	}
 

@@ -12,10 +12,12 @@ import com.tricoeverfire.voxelite.init.ModItems;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FlowingFluidBlock;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.fluid.FlowingFluid;
@@ -23,9 +25,15 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.particles.ParticleType;
+import net.minecraft.particles.ParticleTypes;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class LiquidVoxelite extends FlowingFluidBlock{
@@ -44,7 +52,20 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 		// TODO Auto-generated constructor stub
 	}
 	
+	@Override
+	public void addInformation(ItemStack stack, IBlockReader worldIn, List<ITextComponent> tooltip,
+			ITooltipFlag flagIn) {
+		// TODO Auto-generated method stub
+		super.addInformation(stack, worldIn, tooltip, flagIn);
+	}
 	
+	@Override
+	public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) {
+		
+		worldIn.addParticle(ParticleTypes.SPLASH, entityIn.getPosX(), entityIn.getPosY(), entityIn.getPosZ(), 0, 0, 0);
+		
+		super.onFallenUpon(worldIn, pos, entityIn, fallDistance);
+	}
 	
 	@SuppressWarnings("static-access")
 	@Override
@@ -59,6 +80,7 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 			}
 
 		}
+	//	worldIn.addParticle(ParticleTypes.SPLASH, entityIn.getPosX(), entityIn.getPosY(), entityIn.getPosZ(), 0, 0, 0);
 		
 		
 		
@@ -72,11 +94,11 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 				boolean dos = false;
 				boolean tres = false;
 				boolean quadre = false;
-				
+				entityIn.fallDistance = 0;
 				
 				LivingEntity entity = (LivingEntity) entityIn;
 				
-				
+				handleWaterMovement(entity);
 				
 				BlockPos newposis = new BlockPos(entityIn);
 
@@ -282,5 +304,56 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 		super.onEntityCollision(state, worldIn, pos, entityIn);
 	}
 	
+	
+	   public boolean handleWaterMovement(Entity entityIn) {
+		      if (entityIn.getRidingEntity() instanceof BoatEntity) {
+		    	  entityIn.inWater = false;
+		      } else if (entityIn.handleFluidAcceleration(FluidTags.WATER)) {
+		         if (!entityIn.inWater && !true) {
+		        	 entityIn.doWaterSplashEffect();
+		         }
+
+		         entityIn.fallDistance = 0.0F;
+		         entityIn.inWater = true;
+		         entityIn.extinguish();
+		      } else {
+		    	  entityIn.inWater = false;
+		      }
+
+		      return entityIn.inWater;
+		   }
+	
+	
+//	protected void doWaterSplashEffect(Entity entity) {
+//	   //   Entity entity = this.isBeingRidden() && this.getControllingPassenger() != null ? this.getControllingPassenger() : this;
+//	      float f = false ? 0.2F : 0.9F;
+//	      Vec3d vec3d = entity.getMotion();
+//	      float f1 = MathHelper.sqrt(vec3d.x * vec3d.x * (double)0.2F + vec3d.y * vec3d.y + vec3d.z * vec3d.z * (double)0.2F) * f;
+//	      if (f1 > 1.0F) {
+//	         f1 = 1.0F;
+//	      }
+//
+//	      if ((double)f1 < 0.25D) {
+//	         entity.playSound(entity.getSplashSound(), f1, 1.0F + (entity.rand.nextFloat() - entity.rand.nextFloat()) * 0.4F);
+//	      } else {
+//	         entity.playSound(entity.getHighspeedSplashSound(), f1, 1.0F + (entity.rand.nextFloat() - entity.rand.nextFloat()) * 0.4F);
+//	      }
+//
+//	      float f2 = (float)MathHelper.floor(entity.getPosY());
+//
+//	      for(int i = 0; (float)i < 1.0F + entity.size.width * 20.0F; ++i) {
+//	         float f3 = (entity.rand.nextFloat() * 2.0F - 1.0F) * entity.size.width;
+//	         float f4 = (entity.rand.nextFloat() * 2.0F - 1.0F) * entity.size.width;
+//	         entity.world.addParticle(ParticleTypes.BUBBLE, entity.getPosX() + (double)f3, (double)(f2 + 1.0F), entity.getPosZ() + (double)f4, vec3d.x, vec3d.y - (double)(entity.rand.nextFloat() * 0.2F), vec3d.z);
+//	      }
+//
+//	      for(int j = 0; (float)j < 1.0F + entity.size.width * 20.0F; ++j) {
+//	         float f5 = (entity.rand.nextFloat() * 2.0F - 1.0F) * entity.size.width;
+//	         float f6 = (entity.rand.nextFloat() * 2.0F - 1.0F) * entity.size.width;
+//	         entity.world.addParticle(ParticleTypes.SPLASH, entity.getPosX() + (double)f5, (double)(f2 + 1.0F), entity.getPosZ() + (double)f6, vec3d.x, vec3d.y, vec3d.z);
+//	      }
+//
+//	   }
+//	
 
 }

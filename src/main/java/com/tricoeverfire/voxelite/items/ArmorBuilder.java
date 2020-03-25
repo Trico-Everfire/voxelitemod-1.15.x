@@ -14,14 +14,20 @@ public class ArmorBuilder {
 	private final String nameBoots;
 	private final String textureName;
 	private final Properties builder;
+	private final boolean microdamage;
 	private final IArmorMaterial materialIn;
 	private ArmorBase[] armorSet;
 	
 	public ArmorBuilder(String name, IArmorMaterial materialIn, Properties builder) {
+		this(name, false, materialIn, builder);
+	}
+	
+	public ArmorBuilder(String name, boolean microdamage, IArmorMaterial materialIn, Properties builder) {
 		this.nameHelmet = name+"_helmet";
 		this.nameChestplate = name+"_chestplate";
 		this.nameLeggings = name+"_leggings";
 		this.nameBoots = name+"_boots";
+		this.microdamage = microdamage;
 		this.textureName = name;
 		this.builder = builder;
 		this.materialIn = materialIn;
@@ -35,23 +41,23 @@ public class ArmorBuilder {
 		System.out.println(i);
 		switch(i) {
 		case 0:{
-			piece = new ArmorBase(this.nameHelmet, this.textureName, this.materialIn, EquipmentSlotType.HEAD, this.builder);
+			piece = new ArmorBase(this.nameHelmet, this.textureName, this.microdamage ,this.materialIn, EquipmentSlotType.HEAD, this.builder);
 			break;
 		}
 		case 1:{
-			piece = new ArmorBase(this.nameChestplate, this.textureName, this.materialIn, EquipmentSlotType.CHEST, this.builder);
+			piece = new ArmorBase(this.nameChestplate, this.textureName, this.microdamage ,this.materialIn, EquipmentSlotType.CHEST, this.builder);
 			break;
 		}
 		case 2:{
-			piece = new ArmorBase(this.nameLeggings, this.textureName, this.materialIn, EquipmentSlotType.LEGS, this.builder);
+			piece = new ArmorBase(this.nameLeggings, this.textureName, this.microdamage ,this.materialIn, EquipmentSlotType.LEGS, this.builder);
 			break;
 		}
 		case 3:{
-			piece = new ArmorBase(this.nameBoots, this.textureName, this.materialIn, EquipmentSlotType.FEET, this.builder);
+			piece = new ArmorBase(this.nameBoots, this.textureName, this.microdamage ,this.materialIn, EquipmentSlotType.FEET, this.builder);
 			break;
 		}
 		default:{
-			piece = new ArmorBase("error", this.textureName, this.materialIn, EquipmentSlotType.FEET, this.builder);
+			piece = new ArmorBase("error", this.textureName, this.microdamage ,this.materialIn, EquipmentSlotType.FEET, this.builder);
 			break;
 		}
 		

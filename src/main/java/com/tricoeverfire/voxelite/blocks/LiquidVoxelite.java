@@ -55,14 +55,14 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 	@Override
 	public void addInformation(ItemStack stack, IBlockReader worldIn, List<ITextComponent> tooltip,
 			ITooltipFlag flagIn) {
-		// TODO Auto-generated method stub
+		
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 	
 	@Override
 	public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) {
 		
-		worldIn.addParticle(ParticleTypes.SPLASH, entityIn.getPosX(), entityIn.getPosY(), entityIn.getPosZ(), 0, 0, 0);
+		//worldIn.addParticle(ParticleTypes.SPLASH, entityIn.getPosX(), entityIn.getPosY(), entityIn.getPosZ(), 0, 0, 0);
 		
 		super.onFallenUpon(worldIn, pos, entityIn, fallDistance);
 	}
@@ -309,7 +309,7 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 		      if (entityIn.getRidingEntity() instanceof BoatEntity) {
 		    	  entityIn.inWater = false;
 		      } else if (entityIn.handleFluidAcceleration(FluidTags.WATER)) {
-		         if (!entityIn.inWater && !true) {
+		         if (!entityIn.inWater && !false) {
 		        	 entityIn.doWaterSplashEffect();
 		         }
 

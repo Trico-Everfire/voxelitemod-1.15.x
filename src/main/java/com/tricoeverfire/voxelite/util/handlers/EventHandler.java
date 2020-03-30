@@ -1,14 +1,20 @@
 package com.tricoeverfire.voxelite.util.handlers;
 
+import java.util.List;
+
 import com.tricoeverfire.voxelite.init.ModBiomes;
-import com.tricoeverfire.voxelite.items.ArmorBase;
+import com.tricoeverfire.voxelite.init.ModFluids;
+import com.tricoeverfire.voxelite.init.ModItems;
+import com.tricoeverfire.voxelite.special.LiquidPhysics;
 import com.tricoeverfire.voxelite.util.Reference;
 
-import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraftforge.client.event.InputEvent;
+import net.minecraft.item.Item;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -18,8 +24,42 @@ public class EventHandler {
 
 	
 	@SubscribeEvent
-	public static void onKeyDown(InputEvent.KeyInputEvent event) {
+	public static void onItemToolTip(ItemTooltipEvent event) {
 		
+		//System.out.println(" cock");
+		for(Item stak : ModItems.AVOKINATE_ARMOR) {
+		
+		if(event.getItemStack().getItem() == stak) {
+		 List<ITextComponent> evi = event.getToolTip();
+		 try {
+			
+			 
+			 	
+				for(int tagcounter = 0; tagcounter < evi.size(); tagcounter++) {
+			 		ITextComponent tags = evi.get(tagcounter);
+			 		
+			 		boolean tagisright = tags.equals(new TranslationTextComponent("item.durability", event.getItemStack().getMaxDamage() - event.getItemStack().getDamage(), event.getItemStack().getMaxDamage()));
+					// System.out.println(tagisright);
+						if(tagisright) {
+							evi.set(tagcounter, new TranslationTextComponent("item.durability", event.getItemStack().getMaxDamage() - event.getItemStack().getDamage() +" | "+ event.getItemStack().getOrCreateTag().getFloat("microdamage")+" MD", event.getItemStack().getMaxDamage() + ""));
+						} else {
+							evi.set(evi.size() - 3, new TranslationTextComponent("item.durability", event.getItemStack().getMaxDamage() - event.getItemStack().getDamage() +" | "+ event.getItemStack().getOrCreateTag().getFloat("microdamage")+" MD", event.getItemStack().getMaxDamage() + ""));	
+						}
+			 		
+			 	}
+				 
+			
+			
+		
+			 //	}
+		// System.out.println();
+		 } catch(Exception e) {
+			 
+		 }
+		 }
+	}
+		
+		//event.getToolTip().
 	}
 	
     @SubscribeEvent
@@ -27,6 +67,8 @@ public class EventHandler {
     	LivingEntity entity = event.getEntityLiving();
     //	System.out.println("aaa");
     	
+      LiquidPhysics physics = new LiquidPhysics(entity,ModFluids.voxelfuildssource);
+      physics.init();
     	
     	if(entity instanceof PlayerEntity) {
     		

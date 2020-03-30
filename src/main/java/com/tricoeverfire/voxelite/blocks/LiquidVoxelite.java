@@ -17,7 +17,6 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.fluid.FlowingFluid;
@@ -25,16 +24,12 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.particles.ParticleType;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+
 
 public class LiquidVoxelite extends FlowingFluidBlock{
 
@@ -44,12 +39,12 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 	@SuppressWarnings("deprecation")
 	protected LiquidVoxelite(FlowingFluid fluidIn, Properties builder) {
 		super(fluidIn, builder);
-		// TODO Auto-generated constructor stub
+	
 	}
 
 	public LiquidVoxelite(Supplier<? extends FlowingFluid> supplier, Properties p_i48368_1_) {
 		super(supplier, p_i48368_1_);
-		// TODO Auto-generated constructor stub
+	
 	}
 	
 	@Override
@@ -67,17 +62,17 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 		super.onFallenUpon(worldIn, pos, entityIn, fallDistance);
 	}
 	
-	@SuppressWarnings("static-access")
+//	@SuppressWarnings("static-access")
 	@Override
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		//entityIn.setVelocity(entityIn., y, z);
 		if(entityIn instanceof LivingEntity) {
-			LivingEntity entity = (LivingEntity) entityIn;
-		
-			if(entity.isJumping) {
-				Vec3d vec = entity.getMotion().add(0.0D, (double)0.04F * entity.getAttribute(entity.SWIM_SPEED).getValue(),0.0D);
-				 entity.setMotion(vec);
-			}
+//			LivingEntity entity = (LivingEntity) entityIn;
+			
+//			if(entity.isJumping) {
+//		//		Vec3d vec = entity.getMotion().add(0.0D, (double)0.04F * entity.getAttribute(entity.SWIM_SPEED).getValue(),0.0D);
+//		//		 entity.setMotion(vec);
+//			}
 
 		}
 	//	worldIn.addParticle(ParticleTypes.SPLASH, entityIn.getPosX(), entityIn.getPosY(), entityIn.getPosZ(), 0, 0, 0);
@@ -94,11 +89,11 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 				boolean dos = false;
 				boolean tres = false;
 				boolean quadre = false;
-				entityIn.fallDistance = 0;
+				//entityIn.fallDistance = 0;
 				
 				LivingEntity entity = (LivingEntity) entityIn;
 				
-				handleWaterMovement(entity);
+				
 				
 				BlockPos newposis = new BlockPos(entityIn);
 
@@ -225,7 +220,7 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 					quadre = true;
 				}
 				
-				if(nbtboots.getFloat("microdamage") == 80) {
+				if(nbtboots.getFloat("microdamage") == 100) {
 					armor.get(0).damageItem(1, entity,(eentity)->{eentity.sendBreakAnimation(EquipmentSlotType.FEET);});
 					nbtboots.putFloat("microdamage", 0);
 					armor.get(0).setTag(nbtboots);
@@ -234,7 +229,7 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 					armor.get(0).setTag(nbtboots);
 				}
 				
-				if(nbtleggings.getFloat("microdamage") == 80) {
+				if(nbtleggings.getFloat("microdamage") == 100) {
 					armor.get(1).damageItem(1, entity,(eentity)->{eentity.sendBreakAnimation(EquipmentSlotType.LEGS);});
 					nbtleggings.putFloat("microdamage", 0);
 					armor.get(1).setTag(nbtleggings);
@@ -242,7 +237,7 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 					armor.get(1).setTag(nbtleggings);
 				}
 				
-				if(nbthelmet.getFloat("microdamage") == 80) {
+				if(nbthelmet.getFloat("microdamage") == 100) {
 					armor.get(3).damageItem(1, entity,(eentity)->{eentity.sendBreakAnimation(EquipmentSlotType.HEAD);});
 					nbthelmet.putFloat("microdamage", 0);
 					armor.get(3).setTag(nbthelmet);
@@ -250,7 +245,7 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 					armor.get(3).setTag(nbthelmet);
 				}
 				
-				if(nbtchest.getFloat("microdamage") == 80) {
+				if(nbtchest.getFloat("microdamage") == 100) {
 					armor.get(2).damageItem(1, entity,(eentity)->{eentity.sendBreakAnimation(EquipmentSlotType.CHEST);});
 					nbtchest.putFloat("microdamage", 0);
 					armor.get(2).setTag(nbtchest);
@@ -282,9 +277,12 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 					return;
 				}
 				
-		      
-		        Vec3d vec3d = entityIn.getMotion();
-		        entityIn.setMotion(vec3d.x * (double)0.99F, vec3d.y + (double)(vec3d.y < (double)0.06F ? 5.0E-4F : 0.0F), vec3d.z * (double)0.99F);
+			//	handleFluidAcceleration(entityIn);
+				
+		//		handleWaterMovement(entityIn);
+			//	System.out.println("aaa");
+		    //    Vec3d vec3d = entityIn.getMotion();
+		     //.setMotion(vec3d.x * (double)0.99F, vec3d.y + (double)(vec3d.y < (double)0.06F ? 5.0E-4F : 0.0F), vec3d.z * (double)0.99F);
 		          
 				ItemEntity item = (ItemEntity) entityIn;
 				final Set<Item> IMMUNE =  Sets.newHashSet(ModItems.SUPER_CHARGED_AVOKINATE_HAMMER,ModItems.CHARGED_AVOKINATE_HAMMER,ModItems.AVOKINATE_HAMMER,ModItems.VOXELIZED_SLUDGE,ModItems.AVOKINATE_AXE,ModItems.AVOKINATE_PICKAXE,ModItems.AVOKINATE_HOE,ModItems.AVOKINATE_BOOTS,ModItems.AVOKINATE_CHESTPLATE,ModItems.AVOKINATE_CRYSTAL,ModItems.AVOKINATE_DUST,ModItems.AVOKINATE_HELMET,ModItems.AVOKINATE_LEGGINGS,ModItems.AVOKINATE_MEDAL,ModItems.AVOKINATE_SPADE,ModItems.AVOKINATE_SWORD,ModItems.CHARGED_AVOKINATE_AXE,ModItems.CHARGED_AVOKINATE_CRYSTAL,ModItems.CHARGED_AVOKINATE_HOE,ModItems.CHARGED_AVOKINATE_PICKAXE,ModItems.CHARGED_AVOKINATE_SPADE,ModItems.CHARGED_AVOKINATE_SWORD,ModItems.AVOKINATE_SPEAR,ModBlocks.AVOKINATE_BLOCK.asItem(),ModBlocks.AVOKINATE_ORE.asItem(),ModBlocks.BLEACHED_BLOCK.asItem(),ModBlocks.VOXELIZED_DIRT.asItem(),ModBlocks.VOXELIZED_SAND.asItem(),ModBlocks.VOXELIZED_GRAVEL.asItem(),ModBlocks.VOXELIZED_STONE.asItem(),ModBlocks.VOXELIZED_LEAVES.asItem(),ModBlocks.VOXELIZED_LOG.asItem(),ModBlocks.VOXELIZED_COBBLESTONE.asItem(),ModBlocks.VOXELIZED_ORE.asItem());
@@ -305,23 +303,98 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 	}
 	
 	
-	   public boolean handleWaterMovement(Entity entityIn) {
-		      if (entityIn.getRidingEntity() instanceof BoatEntity) {
-		    	  entityIn.inWater = false;
-		      } else if (entityIn.handleFluidAcceleration(FluidTags.WATER)) {
-		         if (!entityIn.inWater && !false) {
-		        	 entityIn.doWaterSplashEffect();
-		         }
-
-		         entityIn.fallDistance = 0.0F;
-		         entityIn.inWater = true;
-		         entityIn.extinguish();
-		      } else {
-		    	  entityIn.inWater = false;
-		      }
-
-		      return entityIn.inWater;
-		   }
+//	   public boolean handleWaterMovement(Entity entityIn) {
+//		      if (entityIn.getRidingEntity() instanceof BoatEntity) {
+//		    	  entityIn.inWater = false;
+//		      } else if (handleFluidAcceleration(entityIn)) {
+//		         if (!entityIn.inWater && !false) {
+//		        	 entityIn.doWaterSplashEffect();
+//		         }
+//
+//		         entityIn.fallDistance = 0.0F;
+//		         entityIn.inWater = true;
+//		         entityIn.extinguish();
+//		      } else {
+//		    	  entityIn.inWater = false;
+//		      }
+//		      
+//		      if (!entityIn.world.isRemote) {
+//		            double d0 = entityIn.getMotion().subtract(entityIn.getMotion()).lengthSquared();
+//		            if (d0 > 0.01D) {
+//		            	entityIn.isAirBorne = true;
+//		            }
+//		         }
+//
+//		      return entityIn.inWater;
+//		   }
+	   
+//	   @SuppressWarnings("deprecation")
+//	public boolean handleFluidAcceleration(Entity entityIn) {
+//		 //  System.out.println("aaas");
+//		      AxisAlignedBB axisalignedbb = entityIn.getBoundingBox().shrink(0.001D);
+//		      int i = MathHelper.floor(axisalignedbb.minX);
+//		      int j = MathHelper.ceil(axisalignedbb.maxX);
+//		      int k = MathHelper.floor(axisalignedbb.minY);
+//		      int l = MathHelper.ceil(axisalignedbb.maxY);
+//		      int i1 = MathHelper.floor(axisalignedbb.minZ);
+//		      int j1 = MathHelper.ceil(axisalignedbb.maxZ);
+//		      if (!entityIn.world.isAreaLoaded(i, k, i1, j, l, j1)) {
+//		         return false;
+//		      } else {
+//		         double d0 = 0.0D;
+//		         boolean flag = entityIn.isPushedByWater();
+//		         boolean flag1 = false;
+//		         Vec3d vec3d = Vec3d.ZERO;
+//		         int k1 = 0;
+//
+//		         try (BlockPos.PooledMutable blockpos$pooledmutable = BlockPos.PooledMutable.retain()) {
+//		        	
+//		            for(int l1 = i; l1 < j; ++l1) {
+//		               for(int i2 = k; i2 < l; ++i2) {
+//		                  for(int j2 = i1; j2 < j1; ++j2) {
+//		                     blockpos$pooledmutable.setPos(l1, i2, j2);
+//		                     IFluidState ifluidstate = entityIn.world.getFluidState(blockpos$pooledmutable);
+//		                  //   System.out.println(ifluidstate);
+//		                //     System.out.println(ModFluids.voxelfuildsflowing.get());
+//		                     if (ifluidstate.getFluid() == ModFluids.voxelfuildsflowing.get()) {
+//		                    
+//		                    	
+//		                    	 double d1 = (double)((float)i2 + ifluidstate.getActualHeight(entityIn.world, blockpos$pooledmutable));
+//		                        if (d1 >= axisalignedbb.minY) {
+//		                           flag1 = true;
+//		                           d0 = Math.max(d1 - axisalignedbb.minY, d0);
+//		                           if (flag) {
+//		                              Vec3d vec3d1 = ifluidstate.getFlow(entityIn.world, blockpos$pooledmutable);
+//		                              if (d0 < 0.4D) {
+//		                                 vec3d1 = vec3d1.scale(d0);
+//		                              }
+//
+//		                              vec3d = vec3d.add(vec3d1);
+//		                              ++k1;
+//		                           }
+//		                        }
+//		                     }
+//		                  }
+//		               }
+//		            }
+//		         }
+//
+//		         if (vec3d.length() > 0.0D) {
+//		            if (k1 > 0) {
+//		               vec3d = vec3d.scale(1.0D / (double)k1);
+//		            }
+//
+//		            if (!(entityIn instanceof PlayerEntity)) {
+//		               vec3d = vec3d.normalize();
+//		            }
+//
+//		            entityIn.setMotion(entityIn.getMotion().add(vec3d.scale(0.014D)));
+//		         }
+//
+//		         entityIn.submergedHeight = d0;
+//		         return flag1;
+//		      }
+//		   }
 	
 	
 //	protected void doWaterSplashEffect(Entity entity) {

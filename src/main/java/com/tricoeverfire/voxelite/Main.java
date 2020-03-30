@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import com.tricoeverfire.voxelite.init.ModBiomes;
 import com.tricoeverfire.voxelite.init.ModBlocks;
 import com.tricoeverfire.voxelite.init.ModEnchantments;
+import com.tricoeverfire.voxelite.init.ModEntities;
 import com.tricoeverfire.voxelite.init.ModFluids;
 import com.tricoeverfire.voxelite.init.ModItemGroups;
 import com.tricoeverfire.voxelite.init.ModItems;
@@ -68,6 +69,7 @@ public class Main
         ModFluids.ITEMS.register(modEventBus);
         ModParticles.PARTICLES.register(modEventBus);
         ModBiomes.BIOMES.register(modEventBus);
+        ModEntities.ENTITIES.register(modEventBus);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
         

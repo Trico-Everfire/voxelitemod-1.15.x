@@ -31,10 +31,15 @@ public class ArmorBase extends ArmorItem{
 		super(materialIn, slot, builder);
 		this.textureName = texturename;
 		this.hasMicroDamage = damage;
+		
 		setRegistryName(Main.location(name));
 		ModItems.ITEMS.add(this);
 	}
-	
+	@Override
+	public boolean isDamaged(ItemStack stack) {
+		// TODO Auto-generated method stub
+		return super.isDamaged(stack);
+	}
 	
 @Override
 public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
@@ -44,16 +49,14 @@ public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> 
 	if(stack != null) {
 
 		if(Screen.hasShiftDown() && !Screen.hasAltDown()) {
-			tooltip.add(new TranslationTextComponent("Micro damage is a measurement of which Avokinate Armor's voxelite damage is measured, every 100 micro damage is equal to 1 Item damage."));
+			tooltip.add(new TranslationTextComponent("Micro Damage (MD) is a measurement of which Avokinate Armor's voxelite damage is measured, every 100 micro damage is equal to 1 Item damage."));
 		} else {
 			tooltip.add(new TranslationTextComponent("Press Shift for more Information"));
 		}
-		if(Screen.hasShiftDown() && Screen.hasAltDown()) {
-			System.out.println(tooltip.set(1, new TranslationTextComponent("SAUCE")));
-		}
+
 		
-	String string = String.valueOf(stack.getOrCreateTag().getFloat("microdamage"));
-	tooltip.add(new TranslationTextComponent( string + " Micro Damage" ));
+//	String string = String.valueOf(stack.getOrCreateTag().getFloat("microdamage"));
+	//tooltip.add(new TranslationTextComponent( string + " Micro Damage" ));
 	
 	}
 	

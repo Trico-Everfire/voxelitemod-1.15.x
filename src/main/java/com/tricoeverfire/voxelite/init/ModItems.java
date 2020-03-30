@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tricoeverfire.voxelite.items.ArmorBuilder;
+import com.tricoeverfire.voxelite.items.AvokinateCrystal;
 import com.tricoeverfire.voxelite.items.AvokinatePickaxe;
 import com.tricoeverfire.voxelite.items.BucketBase;
 import com.tricoeverfire.voxelite.items.ElytraItemBase;
@@ -64,7 +65,7 @@ public class ModItems {
 	public static final Item EMERALD_BUCKET_EMPTY = new BucketBase("emerald_bucket_empty", Fluids.EMPTY, new Item.Properties().group(ModItemGroups.voxelitemoditems).maxStackSize(1));
 
 	//public static final BucketItem EMERALD_BUCKET_VOXELITE = new BucketBase("emerald_bucket_voxelite", ModFluids.voxelfuildssource, new Item.Properties().containerItem(ModItems.EMERALD_BUCKET_EMPTY).maxStackSize(1).group(ModItemGroups.voxelitemoditems));
-	public static final Item AVOKINATE_CRYSTAL = new ItemBase("avokinate_crystal");
+	public static final Item AVOKINATE_CRYSTAL = new AvokinateCrystal("avokinate_crystal");
 	public static final Item CHARGED_AVOKINATE_CRYSTAL = new ItemBase("charged_avokinate_crystal");
 	public static final Item AVOKINATE_DUST = new ItemBase("avokinate_dust");
 	public static final Item IRON_STICK = new ItemBase("iron_stick");

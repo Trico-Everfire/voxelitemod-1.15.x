@@ -8,7 +8,7 @@ import com.tricoeverfire.voxelite.init.ModItems;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.BucketItem;
 
-public class BucketBase extends BucketItem{
+public class BucketBase extends BucketItem {
 	
 	
 	@SuppressWarnings("deprecation")
@@ -16,6 +16,7 @@ public class BucketBase extends BucketItem{
 		super(containedFluidIn, builder);
 		setRegistryName(Main.location(name));
 		ModItems.ITEMS.add(this);
+//		new DynamicBucketModel(containedFluidIn, canRepair, canRepair, canRepair);
 	}
 	
 
@@ -32,10 +33,20 @@ public class BucketBase extends BucketItem{
 		
 	}
 	
+	
 	@Override
 	public String getTranslationKey() {
 		return "Emerald " + getFluid().getDefaultState().getBlockState().getBlock().getNameTextComponent().getString() +" Bucket";
 	}
+
+
+//	@Override
+//	public int getColor(ItemStack arg0, int arg1) {
+//		if(arg1 == 0) {
+//		return 0x50C878;
+//		}
+//		return 0;
+//	}
 
 
 }

@@ -1,9 +1,9 @@
 ------------------------------------------------------------------------------------|
-|																					|
-|  Project Voxelite Mod By Trico Everfire, RPG Jones (@Baxterdam_D105) & Phillippe	|
-|		 			Made With: Love, Care and Eclipse IDE.							|
-|																					|
-|																					|
+|       								            |
+|  Project Voxelite Mod By Trico Everfire, RPG Jones (@Baxterdam_D105) & Phillippe  |
+|		        Made With: Love, Care and Eclipse IDE.			    |
+|      										    |
+|					        				    |
 ------------------------------------------------------------------------------------|
 
 Intro:

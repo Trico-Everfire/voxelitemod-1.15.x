@@ -37,6 +37,8 @@ public class ModItems {
 	//materiels
 	public static final ModItemTier MATERIAL_AVOKINATE = ModItemTier.AVOKINATE;
 	public static final ModItemTier CHARGED_MATERIAL_AVOKINATE = ModItemTier.CHARGED_AVOKINATE;
+	
+
 	//public static final ArmorMaterial ARMOR_MATERIAL_AVOKINATE = EnumHelper.addArmorMaterial("armor_material_avokinate", Reference.MOD_ID + ":avokinate", 14, new int[] {2,7,5,3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 1.0F);
 	//public static final ToolMaterial MATERIAL_IRONREINFORCED = EnumHelper.addToolMaterial("material_ironreinforced", 3, 1250, 5.0F, 4.0F, 11);
 	//public static final EnumAction SWING = EnumHelper.addAction("swing");
@@ -59,7 +61,8 @@ public class ModItems {
 //	public static final GemBase BLANKSLATE = new GemBase("blue_breaker_blade","breaker_blade",0x0048ff,2,3000,4.0F,4.0F,-1.4F,11F);
 	
 	
-	
+	//spawn eggs
+//	public static final Item VOXIVANSPAWNITEM = new SpawnEggBase("voxivan_spawn_egg", ModEntities.VOXIVAN_ENTITY.get() ,0xffffff,0x000000, new Properties());
 	
 	//items
 	public static final Item EMERALD_BUCKET_EMPTY = new BucketBase("emerald_bucket_empty", Fluids.EMPTY, new Item.Properties().group(ModItemGroups.voxelitemoditems).maxStackSize(1));

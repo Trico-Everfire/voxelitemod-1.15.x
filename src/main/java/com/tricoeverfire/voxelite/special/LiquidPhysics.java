@@ -2,7 +2,7 @@ package com.tricoeverfire.voxelite.special;
 
 import java.util.function.Supplier;
 
-import net.minecraft.block.FlowingFluidBlock;
+import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -10,9 +10,9 @@ import net.minecraft.fluid.Fluid;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.Tag;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
-import net.minecraftforge.fml.RegistryObject;
 
 public class LiquidPhysics {
 	
@@ -37,7 +37,37 @@ public class LiquidPhysics {
 //	}
 
 	public void init() {
-		tick();
+		
+		
+		
+		if(isEntityInBlock(entity,fluid.getDefaultState().getBlockState().getBlock())) {
+			tick();
+		}
+		
+	}
+	
+	public boolean isEntityInBlock(Entity entity, Block block) {
+		if (entity.noClip) {
+	         return false;
+	      } else {
+	         try (BlockPos.PooledMutable blockpos$pooledmutable = BlockPos.PooledMutable.retain()) {
+	            for(int i = 0; i < 8; ++i) {
+	               int j = MathHelper.floor(entity.getPosY() + (double)(((float)((i >> 0) % 2) - 0.5F) * 0.1F) + (double)entity.getEyeHeight());
+	               int k = MathHelper.floor(entity.getPosX() + (double)(((float)((i >> 1) % 2) - 0.5F) * entity.getSize(entity.getPose()).width * 0.8F));
+	               int l = MathHelper.floor(entity.getPosZ() + (double)(((float)((i >> 2) % 2) - 0.5F) * entity.getSize(entity.getPose()).width * 0.8F));
+	               if (blockpos$pooledmutable.getX() != k || blockpos$pooledmutable.getY() != j || blockpos$pooledmutable.getZ() != l) {
+	                  blockpos$pooledmutable.setPos(k, j, l);
+	                  if (entity.world.getBlockState(blockpos$pooledmutable) == block.getDefaultState()) {
+	                     boolean flag = true;
+	                     return flag;
+	                  }
+	               }
+	            }
+
+	            return false;
+	         }
+	      }
+		
 	}
 	
 	protected void tick() {

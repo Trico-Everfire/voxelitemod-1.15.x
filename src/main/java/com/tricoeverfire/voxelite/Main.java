@@ -5,6 +5,8 @@ import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.tricoeverfire.voxelite.entities.renderer.SlugEntityRenderer;
+import com.tricoeverfire.voxelite.entities.renderer.VoxivanEntityRenderer;
 import com.tricoeverfire.voxelite.init.ModBiomes;
 import com.tricoeverfire.voxelite.init.ModBlocks;
 import com.tricoeverfire.voxelite.init.ModEnchantments;
@@ -31,6 +33,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -92,7 +95,8 @@ public class Main
     	
     	
     	
-    	
+    	RenderingRegistry.registerEntityRenderingHandler(ModEntities.VOXIVAN_ENTITY.get(), VoxivanEntityRenderer::new);
+    	RenderingRegistry.registerEntityRenderingHandler(ModEntities.SLUG_ENTITY.get(), SlugEntityRenderer::new);
     	RenderTypeLookup.setRenderLayer(ModBlocks.REINFORCED_GLASS, RenderType.getCutout());
     	RenderTypeLookup.setRenderLayer(ModBlocks.CRACKED_REINFORCED_GLASS, RenderType.getCutout());
     	RenderTypeLookup.setRenderLayer(ModBlocks.BLACKSTONEDOOR, RenderType.getCutout());

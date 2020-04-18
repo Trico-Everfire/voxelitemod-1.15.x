@@ -71,7 +71,7 @@ public class LiquidPhysics {
 	}
 	
 	protected void tick() {
-		
+		System.out.println("inside the liquid");
 		
 		if(entity instanceof LivingEntity) {
 			LivingEntity entityliving = (LivingEntity) entity;

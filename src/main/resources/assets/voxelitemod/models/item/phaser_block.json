@@ -1,0 +1,21 @@
+{
+ "parent": "voxelitemod:block/phaser_solid",
+ "overrides": [
+        {
+            "predicate": {
+                "inverse": 0
+            },
+             
+             "model":"voxelitemod:block/phaser_solid"
+        },
+        
+        {
+            "predicate": {
+                "inverse": 1
+            },
+            
+             "model":"voxelitemod:block/phaser_inverse_non_solid"
+        }
+      ]
+ }
+        

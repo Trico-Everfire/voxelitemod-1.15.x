@@ -1,6 +1,9 @@
 package com.tricoeverfire.voxelite.entities;
 
+import java.util.Random;
+
 import com.tricoeverfire.voxelite.init.ModEntities;
+import com.tricoeverfire.voxelite.init.ModSounds;
 
 import net.minecraft.entity.AgeableEntity;
 import net.minecraft.entity.EntityType;
@@ -13,10 +16,14 @@ import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class SlugEntity extends AnimalEntity{
+	
+	private int durationnotplayed = 0;
 
 	public SlugEntity(EntityType<? extends AnimalEntity> type, World worldIn) {
 		super(type, worldIn);
@@ -50,5 +57,41 @@ public class SlugEntity extends AnimalEntity{
 		return false;//stack.getItem() == Items.AIR;
 	}
 	
-	
+	@Override
+	protected SoundEvent getAmbientSound() {
+		
+		if(durationnotplayed == 0) {
+			Random rand = new Random();
+			int number = rand.nextInt(12 * 2) + 1;
+			
+			if(number == 1) {
+			
+				durationnotplayed++;
+				return ModSounds.SLUGSING.get();
+			
+			}
+			
+			return ModSounds.SLUGAMBIENT.get();
+			}
+			
+			durationnotplayed++;
+			
+			if(durationnotplayed >= 4) {
+				durationnotplayed = 0;
+			}
+			
+			return ModSounds.SLUGAMBIENT.get();
+
+		
+	}
+	@Override
+	protected SoundEvent getDeathSound() {
+		
+		return ModSounds.SLUGDEATH.get();
+	}
+	@Override
+	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
+		
+		return ModSounds.SLUGHURT.get();
+	}
 }

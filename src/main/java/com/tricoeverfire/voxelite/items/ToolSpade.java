@@ -11,7 +11,7 @@ import net.minecraft.item.ShovelItem;
 public class ToolSpade extends ShovelItem{
 
 	public ToolSpade(String name, IItemTier tier) {
-		this(name, tier, 550,4);
+		this(name, tier, 5,4);
 	}
 	
 	public ToolSpade(String name, IItemTier tier , float maxdmg, float attackdmg) {

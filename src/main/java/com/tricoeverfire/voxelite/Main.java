@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.tricoeverfire.voxelite.commands.CommandsAnnex;
 import com.tricoeverfire.voxelite.entities.renderer.SlugEntityRenderer;
 import com.tricoeverfire.voxelite.entities.renderer.VoxivanEntityRenderer;
 import com.tricoeverfire.voxelite.init.ModBiomes;
@@ -15,7 +16,10 @@ import com.tricoeverfire.voxelite.init.ModFluids;
 import com.tricoeverfire.voxelite.init.ModItemGroups;
 import com.tricoeverfire.voxelite.init.ModItems;
 import com.tricoeverfire.voxelite.init.ModParticles;
+import com.tricoeverfire.voxelite.init.ModSounds;
+import com.tricoeverfire.voxelite.init.ModTileEntityTypes;
 import com.tricoeverfire.voxelite.items.BucketBase;
+import com.tricoeverfire.voxelite.items.SpawnEggBase;
 import com.tricoeverfire.voxelite.util.Reference;
 import com.tricoeverfire.voxelite.world.VoxeliteWorldType;
 
@@ -24,12 +28,14 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.entity.EntityType;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -66,14 +72,17 @@ public class Main
         // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
-
+        ModTileEntityTypes.TILE_ENTITY_TYPE.register(modEventBus);
+        ModSounds.SOUNDS.register(modEventBus);
         ModFluids.FLUIDS.register(modEventBus);
         ModFluids.BLOCKS.register(modEventBus);
         ModFluids.ITEMS.register(modEventBus);
+        ModItems.DEFERREDITEMS.register(modEventBus);
         ModParticles.PARTICLES.register(modEventBus);
         ModBiomes.BIOMES.register(modEventBus);
         ModEntities.ENTITIES.register(modEventBus);
         // Register ourselves for server and other game events we are interested in
+        
         MinecraftForge.EVENT_BUS.register(this);
         
 
@@ -103,6 +112,9 @@ public class Main
     	RenderTypeLookup.setRenderLayer(ModBlocks.BLACKSTONEDOORLOCKED, RenderType.getCutout());
     	RenderTypeLookup.setRenderLayer(ModBlocks.LIGHTBULB, RenderType.getCutout());
     	RenderTypeLookup.setRenderLayer(ModBlocks.STARDUSTGROWTH, RenderType.getCutout());
+    	RenderTypeLookup.setRenderLayer(ModBlocks.STARDUST_SAPLING, RenderType.getCutout());
+    	RenderTypeLookup.setRenderLayer(ModBlocks.HIDDENGLASSWALLING, RenderType.getCutout());
+    	RenderTypeLookup.setRenderLayer(ModBlocks.HIDDENPHASERBLOCK, RenderType.getCutout());
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
     }
 
@@ -122,7 +134,7 @@ public class Main
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) {
-        // do something when the server starts
+    	new CommandsAnnex(event.getCommandDispatcher());
         LOGGER.info("HELLO from server starting");
     }
 
@@ -140,6 +152,11 @@ public class Main
             LOGGER.info("HELLO from Register Block");
         }
         
+    	@SubscribeEvent(priority = EventPriority.LOWEST)
+    	public static void onPostRegisterEntities(final RegistryEvent.Register<EntityType<?>> event) {
+    		SpawnEggBase.initUnaddedEggs();
+    	}
+        
         @SubscribeEvent
         public static void onEnchantmentRegistry(final RegistryEvent.Register<Enchantment> event) {
       
@@ -147,6 +164,11 @@ public class Main
         	event.getRegistry().register(enchants);
         	}
         }
+        
+//        public static void onModelRegister(ModelLoaderRegistry event) {
+//        //	event.registerLoader(0, ModdedModelLoader::new);
+//        }
+//        
         
         @SubscribeEvent
        	public static void onItemRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {

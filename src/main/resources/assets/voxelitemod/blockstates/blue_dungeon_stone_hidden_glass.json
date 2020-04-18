@@ -1,0 +1,11 @@
+
+{
+    "variants": {
+        "facing=up": { "model": "voxelitemod:block/blue_dungeon_stone_hidden_glass"} ,
+        "facing=down": { "model": "voxelitemod:block/blue_dungeon_stone_hidden_glass", "x": 180 },
+        "facing=north": { "model": "voxelitemod:block/blue_dungeon_stone_hidden_glass", "x" : 90},
+        "facing=south": { "model": "voxelitemod:block/blue_dungeon_stone_hidden_glass", "x" : 90, "y": 180 },
+        "facing=west": { "model": "voxelitemod:block/blue_dungeon_stone_hidden_glass", "x" : 90, "y": 270 },
+        "facing=east": { "model": "voxelitemod:block/blue_dungeon_stone_hidden_glass", "x" : 90, "y": 90 }
+    }
+}

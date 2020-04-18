@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "voxelitemod:blocks/blue_dungeon_floor",
+        "down": "voxelitemod:blocks/reinforced_glass",
+        "up": "voxelitemod:blocks/blue_dungeon_floor",
+        "north": "voxelitemod:blocks/reinforced_glass",
+        "east": "voxelitemod:blocks/reinforced_glass",
+        "south": "voxelitemod:blocks/reinforced_glass",
+        "west": "voxelitemod:blocks/reinforced_glass"
+    }
+}

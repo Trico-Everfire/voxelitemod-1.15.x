@@ -28,7 +28,7 @@ public class AntiVoxeliteDepletion extends Enchantment{
 	
 		for(Item stacky : ModItems.AVOKINATE_ARMOR) {
 			if(stacky == stack.getItem()) {
-				return super.canApply(stack);
+				return true;
 			}
 		}
 		

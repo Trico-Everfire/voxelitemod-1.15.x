@@ -7,7 +7,6 @@ import com.tricoeverfire.voxelite.util.Reference;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
-import net.minecraftforge.common.util.NonNullLazy;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

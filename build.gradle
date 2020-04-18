@@ -19,6 +19,17 @@ archivesBaseName = 'voxelitemod'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
+
+repositories {
+    flatDir {
+        dirs './libs'
+    }
+}
+
+dependencies {
+   runtimeOnly fg.deobf("ignored:worldedit-forge-mc1.15.2:7.1.0")
+}
+
 minecraft {
 
 

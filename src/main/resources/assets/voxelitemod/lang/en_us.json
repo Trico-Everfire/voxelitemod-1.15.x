@@ -68,10 +68,11 @@
 "item.voxelitemod.pearl_pouch":"Pearl Pouch",
 "item.voxelitemod.sea_orb":"Sea Orb",
 "item.voxelitemod.stilzs_gem":"Stilzs Gem",
-
+"item.voxelitemod.slug_spawn_egg":"Stardust Slug Spawn Egg",
+"item.voxelitemod.voxivan_spawn_egg":"Voxivan Spawn Egg",
 
 "enchantment.voxelitemod.voxelite_depletion_resistance":"Voxelite Depletion Resistance",
-
+"enchantment.voxelitemod.super_hammer_swing":"Super Hammer Swing",
 
 "item.voxelitemod.avokinate_leggings":"Avokinate Leggings",
 "item.voxelitemod.avokinate_helmet":"Avokinate Helmet",
@@ -105,10 +106,15 @@
 "block.voxelitemod.stardust_log_top":"Stardust Log Top",
 
 
+"commands.voxelitemod.reloadMABB":"Reloading Models and BoundingBoxes.",
 
 
 "block.voxelitemod.liquid_voxelite":"Liquid Voxelite",
 
+"entity.slug.slugcry":"Slug cries",
+"entity.slug.slughurt":"Slug hurt",
+"entity.slug.slugdeath":"Slug dies",
+"entity.slug.slugsing":"Slug sings",
 
 "itemGroup.voxelitemod_items":"Voxelite Mod Items",
 "itemGroup.voxelitemod_blocks":"Voxelite Mod blocks",
@@ -118,7 +124,7 @@
 "death.attack.voxelized":"%s succumbed to Voxelization.",
 "death.attack.voxelite_rain1":"%s eroded away in the Voxelite rain.",
 "death.attack.voxelite_rain2":"%s tried to take a shower",
-
+"death.attack.hammer_slam":"%s got slammed to death by %p",
 
 "generator.voxelite":"Voxelite Biome"
 }

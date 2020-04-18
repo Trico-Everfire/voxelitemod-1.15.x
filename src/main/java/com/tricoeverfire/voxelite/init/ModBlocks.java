@@ -17,11 +17,15 @@ import com.tricoeverfire.voxelite.blocks.BlockWallBase;
 import com.tricoeverfire.voxelite.blocks.IronFence;
 import com.tricoeverfire.voxelite.blocks.IronFenceGate;
 import com.tricoeverfire.voxelite.blocks.LightBulb;
+import com.tricoeverfire.voxelite.blocks.PhaserBlock;
 import com.tricoeverfire.voxelite.blocks.ReinforcedGlass;
+import com.tricoeverfire.voxelite.blocks.RotatableHiddenGlassBlock;
 import com.tricoeverfire.voxelite.blocks.RoyalLight;
 import com.tricoeverfire.voxelite.blocks.StardustGrowth;
+import com.tricoeverfire.voxelite.blocks.StardustSapling;
 import com.tricoeverfire.voxelite.blocks.TestBlockEntityPlayer;
 import com.tricoeverfire.voxelite.blocks.VoxelizedOre;
+import com.tricoeverfire.voxelite.world.feature.StardustTree;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -60,11 +64,11 @@ public class ModBlocks {
 	public static final BlockBase BLACKSTONEBRICK = new BlockBase("black_stone_brick", Material.ROCK);
 
 
-	public static final Block BLACKSTONEDOOR = new BlockDoorBase("black_stone_door",Material.ROCK,true,false);
-	public static final Block BLACKSTONEDOORLOCKED = new BlockDoorBase("black_stone_door_locked",Material.ROCK,false,true);
+	public static final Block BLACKSTONEDOOR = new BlockDoorBase("black_stone_door",Material.ROCK,null,null,true,false);
+	public static final Block BLACKSTONEDOORLOCKED = new BlockDoorBase("black_stone_door_locked",Material.ROCK,ModItems.BLACK_STONE_DUNGEON_KEY,ModBlocks.BLACKSTONEDOOR,false,true);
+	public static final Block BLUE_DUNGEON_DOOR = new BlockDoorBase("blue_dungeon_door",Material.ROCK,null,null,true,false);
+	public static final Block BLUE_DUNGEON_DOOR_LOCKED = new BlockDoorBase("blue_dungeon_door_locked",Material.ROCK,ModItems.BLUE_DUNGEON_KEY,ModBlocks.BLUE_DUNGEON_DOOR,false,true);
 	
-	public static final Block BLUE_DUNGEON_DOOR = new BlockDoorBase("blue_dungeon_door",Material.ROCK,true,false);
-	public static final Block BLUE_DUNGEON_DOOR_LOCKED = new BlockDoorBase("blue_dungeon_door_locked",Material.ROCK,false,true);
 	public static final Block ROYALLANTERN = new RoyalLight("royal_lantern", Material.GLASS);
 	public static final Block LIGHTBULB = new LightBulb("light_bulb",15,Material.GLASS,false,true);
 	public static final BlockBase BLUEDUNGEONBLOCK = new BlockBase("blue_dungeon_block", Material.IRON);
@@ -85,6 +89,12 @@ public class ModBlocks {
 	public static final Block SMOOTHBLUEDUNGEONWALLUNBREAKABLE = new BlockBase("smooth_blue_dungeon_wall_unbreakable",Material.ROCK,true);
 	public static final Block GLOWINGDUNGEONCEILINGBLOCKUNBREAKABLE = new RoyalLight("glowing_dungeon_ceiling_block_unbreakable", Material.ROCK,true);
 
+	//hidden/unassigned
+	public static final Block HIDDENGLASSWALLING = new RotatableHiddenGlassBlock("blue_dungeon_stone_hidden_glass", ModBlocks.REINFORCED_GLASS);
+
+	public static final Block HIDDENPHASERBLOCK = new PhaserBlock("phaser_block", Material.ROCK, ModItems.PHASER_CRYSTAL, true);
+//	public static final Block HIDDENPHASERBLOCKINVERSE = new PhaserBlock("phaser_block_inverse", Material.ROCK, ModItems.PHASER_CRYSTAL, true, true);
+	
 	
 	public static final Block GLOWINGDUNGEONCEILINGBLOCK = new RoyalLight("glowing_dungeon_ceiling_block", Material.ROCK);
 	public static final Block KITSUNEBLOCK = new BlockBase("kitsune_block", Material.ROCK);
@@ -93,6 +103,9 @@ public class ModBlocks {
 	public static final Block BLACKSTONE = new BlockBase("black_stone", Material.ROCK);
 	public static final Block STARDUSTLEAVES = new BlockLeafBase("stardust_leaves", Material.ROCK);
 	public static final Block STARDUST_LOG = new BlockLogBase("stardust_log");
+
+
+	public static final Block STARDUST_SAPLING = new StardustSapling("stardust_sapling", ()->new StardustTree(), Block.Properties.from(Blocks.OAK_SAPLING));
 	
 	//liquids
 	//public static final Block LIQUID_VOXELITE = new LiquidVoxeliteBlock("liquid_voxelite",ModFluid.LIQUID_VOXELITE,Material.WATER);

@@ -15,11 +15,11 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public enum ModArmorMaterials implements IArmorMaterial {
 
-	   AVOKINATE("avokinate", 8, new int[]{1, 2, 3, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, () -> {
+	   AVOKINATE("avokinate", 16, new int[] {2,7,5,3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 1.0F, () -> {
 		      return Ingredient.fromItems(ModItems.AVOKINATE_CRYSTAL);
 		   }),
 	   CHARGED_AVOKINATE("charged_avokinate", 8, new int[]{1, 2, 3, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, () -> {
-		      return Ingredient.fromItems(ModItems.AVOKINATE_CRYSTAL);
+		      return Ingredient.fromItems(ModItems.CHARGED_AVOKINATE_CRYSTAL);
 		   });
 	
 	   private static final int[] MAX_DAMAGE_ARRAY = new int[]{13, 15, 16, 11};

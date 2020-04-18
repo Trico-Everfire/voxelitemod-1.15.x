@@ -11,7 +11,7 @@ import net.minecraft.item.SwordItem;
 public class ToolSword extends SwordItem{
 
 	public ToolSword(String name, IItemTier tier) {
-		this(name, tier, 550,7);
+		this(name, tier, 17,7);
 	}
 	
 	public ToolSword(String name, IItemTier tier , float maxdmg, float attackdmg) {

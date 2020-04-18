@@ -17,6 +17,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ArmorBase extends ArmorItem{
 	
@@ -42,6 +44,7 @@ public class ArmorBase extends ArmorItem{
 	}
 	
 @Override
+@OnlyIn(Dist.CLIENT)
 public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 	
 	try {

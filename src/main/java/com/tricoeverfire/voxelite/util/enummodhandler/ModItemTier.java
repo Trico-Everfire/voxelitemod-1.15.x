@@ -11,10 +11,10 @@ import net.minecraft.util.LazyValue;
 
 public enum ModItemTier implements IItemTier{
 
-	   AVOKINATE(3, 2000, 8.0F, 3.5F, 10, () -> {
+	   AVOKINATE(3, 2080, 6.0F, 4.5F, 11, () -> {
 		      return Ingredient.fromItems(ModItems.AVOKINATE_CRYSTAL);
 	   }),
-	   CHARGED_AVOKINATE(3, 2400, 9.0F, 5.0F, 11, () -> {
+	   CHARGED_AVOKINATE(4, 3160, 8.0F, 6.0F, 11, () -> {
 		      return Ingredient.fromItems(ModItems.AVOKINATE_CRYSTAL);
 	   });
 	

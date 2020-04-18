@@ -7,25 +7,20 @@ import com.tricoeverfire.voxelite.init.ModBlocks;
 import com.tricoeverfire.voxelite.init.ModItemGroups;
 import com.tricoeverfire.voxelite.init.ModItems;
 
+import net.minecraft.block.AbstractGlassBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.util.Direction;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
-import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class ReinforcedGlass extends Block{
+public class ReinforcedGlass extends AbstractGlassBlock{
 
 	private final String name;
 	public ReinforcedGlass(String name, Material material) 
@@ -46,55 +41,6 @@ public class ReinforcedGlass extends Block{
 
 
 	}
-
-	
-
-
-
-
-
-
-
-	@OnlyIn(Dist.CLIENT)
-	   public float getAmbientOcclusionLightValue(BlockState state, IBlockReader worldIn, BlockPos pos) {
-	      return 1.0F;
-	   }
-
-	   public boolean propagatesSkylightDown(BlockState state, IBlockReader reader, BlockPos pos) {
-	      return true;
-	   }
-
-	   public boolean causesSuffocation(BlockState state, IBlockReader worldIn, BlockPos pos) {
-	      return false;
-	   }
-
-	   public boolean isNormalCube(BlockState state, IBlockReader worldIn, BlockPos pos) {
-	      return false;
-	   }
-
-	   public boolean canEntitySpawn(BlockState state, IBlockReader worldIn, BlockPos pos, EntityType<?> type) {
-	      return false;
-	   }
-	   
-	   @SuppressWarnings("deprecation")
-	   @OnlyIn(Dist.CLIENT)
-	   public boolean isSideInvisible(BlockState state, BlockState adjacentBlockState, Direction side) {
-	      return adjacentBlockState.getBlock() == this ? true : super.isSideInvisible(state, adjacentBlockState, side);
-	   }
-	   
-
-	
-	
-
-	
-
-
-
-
-
-
-
-
 
 
 	@SuppressWarnings("unused")

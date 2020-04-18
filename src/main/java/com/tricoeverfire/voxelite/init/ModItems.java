@@ -11,6 +11,7 @@ import com.tricoeverfire.voxelite.items.ElytraItemBase;
 import com.tricoeverfire.voxelite.items.FoodItem;
 import com.tricoeverfire.voxelite.items.ItemBase;
 import com.tricoeverfire.voxelite.items.RedstoneZapper;
+import com.tricoeverfire.voxelite.items.SpawnEggBase;
 import com.tricoeverfire.voxelite.items.ToolAxe;
 import com.tricoeverfire.voxelite.items.ToolCompass;
 import com.tricoeverfire.voxelite.items.ToolHammer;
@@ -18,15 +19,22 @@ import com.tricoeverfire.voxelite.items.ToolHoe;
 import com.tricoeverfire.voxelite.items.ToolPickaxe;
 import com.tricoeverfire.voxelite.items.ToolSpade;
 import com.tricoeverfire.voxelite.items.ToolSword;
+import com.tricoeverfire.voxelite.util.Reference;
 import com.tricoeverfire.voxelite.util.enummodhandler.ModArmorMaterials;
 import com.tricoeverfire.voxelite.util.enummodhandler.ModItemTier;
 
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModItems {
 
-	
+	public static final DeferredRegister<Item> DEFERREDITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, Reference.MOD_ID);
+
 
 	
 	public static final List<Item> ITEMS = new ArrayList<Item>();
@@ -56,6 +64,8 @@ public class ModItems {
 //		public static final InsertGem PINKLE = new InsertGem("henry",0x0048ff,2,3000,4.0F,4.0F,11);
 	
 
+	public static final RegistryObject<SpawnEggBase> VOXIVANSPAWNEGG = DEFERREDITEMS.register("voxivan_spawn_egg", () -> new SpawnEggBase(ModEntities.VOXIVAN_ENTITY, 0xFFFFFF, 0xf07fae, new Item.Properties().group(ModItemGroups.voxelitemoditems)));
+	public static final RegistryObject<SpawnEggBase> SLUGSPAWNEGG = DEFERREDITEMS.register("slug_spawn_egg", () -> new SpawnEggBase(ModEntities.SLUG_ENTITY, 0xFFFFFF, 0x9ef4ff, new Item.Properties().group(ModItemGroups.voxelitemoditems)));
 
 	
 //	public static final GemBase BLANKSLATE = new GemBase("blue_breaker_blade","breaker_blade",0x0048ff,2,3000,4.0F,4.0F,-1.4F,11F);
@@ -66,7 +76,25 @@ public class ModItems {
 	
 	//items
 	public static final Item EMERALD_BUCKET_EMPTY = new BucketBase("emerald_bucket_empty", Fluids.EMPTY, new Item.Properties().group(ModItemGroups.voxelitemoditems).maxStackSize(1));
-
+	public static final Item PHASER_CRYSTAL = new ItemBase("phaser_crystal") {
+		public void addInformation(net.minecraft.item.ItemStack stack, net.minecraft.world.World worldIn, java.util.List<net.minecraft.util.text.ITextComponent> tooltip, net.minecraft.client.util.ITooltipFlag flagIn) {
+			tooltip.add(new TranslationTextComponent(""));
+			
+		};
+		public void fillItemGroup(net.minecraft.item.ItemGroup group, net.minecraft.util.NonNullList<net.minecraft.item.ItemStack> items) {
+			
+			if (this.isInGroup(group)) {
+				
+				ItemStack crystal = new ItemStack(this);
+				ItemStack blueCrystal = new ItemStack(this);
+				blueCrystal.getOrCreateTag().putString("color", "0x7384AC");
+				
+				items.add(crystal);
+				items.add(blueCrystal);
+			}
+		};
+	};
+	
 	//public static final BucketItem EMERALD_BUCKET_VOXELITE = new BucketBase("emerald_bucket_voxelite", ModFluids.voxelfuildssource, new Item.Properties().containerItem(ModItems.EMERALD_BUCKET_EMPTY).maxStackSize(1).group(ModItemGroups.voxelitemoditems));
 	public static final Item AVOKINATE_CRYSTAL = new AvokinateCrystal("avokinate_crystal");
 	public static final Item CHARGED_AVOKINATE_CRYSTAL = new ItemBase("charged_avokinate_crystal");
@@ -103,8 +131,8 @@ public class ModItems {
 	//tools
 	public static final Item AVOKINATE_PICKAXE = new AvokinatePickaxe("avokinate_pickaxe", MATERIAL_AVOKINATE);
 	public static final Item CHARGED_AVOKINATE_PICKAXE = new AvokinatePickaxe("charged_avokinate_pickaxe", CHARGED_MATERIAL_AVOKINATE);
-	public static final Item AVOKINATE_SWORD = new ToolSword("avokinate_sword",MATERIAL_AVOKINATE);
-	public static final Item CHARGED_AVOKINATE_SWORD = new ToolSword("charged_avokinate_sword",CHARGED_MATERIAL_AVOKINATE);
+	public static final Item AVOKINATE_SWORD = new ToolSword("avokinate_sword",MATERIAL_AVOKINATE, 10 , 6);
+	public static final Item CHARGED_AVOKINATE_SWORD = new ToolSword("charged_avokinate_sword",CHARGED_MATERIAL_AVOKINATE,14,7);
 	public static final Item AVOKINATE_SPADE = new ToolSpade("avokinate_spade",MATERIAL_AVOKINATE);
 	public static final Item CHARGED_AVOKINATE_SPADE = new ToolSpade("charged_avokinate_spade",CHARGED_MATERIAL_AVOKINATE);
 	public static final Item AVOKINATE_AXE = new ToolAxe("avokinate_axe",MATERIAL_AVOKINATE, 6.0F,-3.2F);
@@ -175,6 +203,7 @@ public class ModItems {
 	public static final Item SUPER_CHARGED_AVOKINATE_HAMMER = new ToolHammer("super_charged_avokinate_hammer");
 	public static final Item CHARGED_AVOKINATE_HAMMER = new ToolHammer("charged_avokinate_hammer");
 	public static final Item AVOKINATE_HAMMER = new ToolHammer("avokinate_hammer");
+	
 	public static final Item ANCIENT_PICKAXE = new ToolPickaxe("ancient_pickaxe",MATERIAL_AVOKINATE);
 	public static final Item AVOKINATE_SPEAR = new ToolSword("avokinate_spear",MATERIAL_AVOKINATE);
 	public static final Item REDSTONE_ZAPPER = new RedstoneZapper("redstone_zapper",40);

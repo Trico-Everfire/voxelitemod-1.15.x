@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "voxelitemod:blocks/stardust_sapling"
+    }
+}

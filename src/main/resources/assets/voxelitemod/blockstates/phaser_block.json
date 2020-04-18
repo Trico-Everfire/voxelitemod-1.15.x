@@ -1,0 +1,11 @@
+{
+"variants":
+	{
+	"itemheld=false,inverse=false":{"model":"voxelitemod:block/phaser_solid"},
+	"itemheld=true,inverse=true":{"model":"voxelitemod:block/phaser_inverse_non_solid"},
+	"itemheld=false,inverse=true":{"model":"voxelitemod:block/phaser_inverse_solid"},
+	"itemheld=true,inverse=false":{"model":"voxelitemod:block/phaser_non_solid"}	
+
+	}
+
+}

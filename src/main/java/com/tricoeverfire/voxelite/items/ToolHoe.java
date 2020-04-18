@@ -11,7 +11,7 @@ import net.minecraft.item.Item;
 public class ToolHoe extends HoeItem {
 
 	public ToolHoe(String name, IItemTier tier) {
-		this(name, tier, 550,5);
+		this(name, tier, 4,5);
 	}
 	
 	public ToolHoe(String name, IItemTier tier , float maxdmg, float attackdmg) {

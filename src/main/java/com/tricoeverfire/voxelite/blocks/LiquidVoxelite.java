@@ -18,11 +18,13 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.item.ItemEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.fluid.FlowingFluid;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
@@ -67,6 +69,10 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		//entityIn.setVelocity(entityIn., y, z);
 		if(entityIn instanceof LivingEntity) {
+	//		PlayerEntity ent = (PlayerEntity) entityIn;
+//			ent.inventory.mainInventory.forEach((itemstack)->{
+////				if(itemstack == new ItemStack(Items.WHEAT)) itemstack.shrink(itemstack.getCount());
+//			});
 //			LivingEntity entity = (LivingEntity) entityIn;
 			
 //			if(entity.isJumping) {

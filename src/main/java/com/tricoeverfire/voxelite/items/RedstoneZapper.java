@@ -77,6 +77,7 @@ private static Properties getProperies(int maxUses) {
 }
 
 @Override
+@OnlyIn(Dist.CLIENT)
 public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 	
 	tooltip.add(newTextComponent("right click to stun enemies for 5 seconds"));

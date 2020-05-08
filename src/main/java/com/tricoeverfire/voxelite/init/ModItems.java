@@ -6,6 +6,7 @@ import java.util.List;
 import com.tricoeverfire.voxelite.items.ArmorBuilder;
 import com.tricoeverfire.voxelite.items.AvokinateCrystal;
 import com.tricoeverfire.voxelite.items.AvokinatePickaxe;
+import com.tricoeverfire.voxelite.items.BlockNamedItemBase;
 import com.tricoeverfire.voxelite.items.BucketBase;
 import com.tricoeverfire.voxelite.items.ElytraItemBase;
 import com.tricoeverfire.voxelite.items.FoodItem;
@@ -24,6 +25,7 @@ import com.tricoeverfire.voxelite.util.enummodhandler.ModArmorMaterials;
 import com.tricoeverfire.voxelite.util.enummodhandler.ModItemTier;
 
 import net.minecraft.fluid.Fluids;
+import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -38,9 +40,7 @@ public class ModItems {
 
 	
 	public static final List<Item> ITEMS = new ArrayList<Item>();
-	//public static final List<ToolMaterial> GEMS = new ArrayList<ToolMaterial>();
 	public static final List<Item> COLORABLE = new ArrayList<Item>();
-	//public static final List<GemBase> GEMS = new ArrayList<GemBase>();
 	
 	//materiels
 	public static final ModItemTier MATERIAL_AVOKINATE = ModItemTier.AVOKINATE;
@@ -113,8 +113,8 @@ public class ModItems {
 	public static final ItemBase SEAORB = new ItemBase("sea_orb");
 	public static final ItemBase STILZSGEM = new ItemBase("stilzs_gem");
 	//public static final ItemBase STILZSGEMDISTINGUISHEDOUTLINE = new ItemBase("stilzs_gem_distinguished_outline");
-
-	
+	public static final Item NEBUSEEDS = new BlockNamedItemBase("nebu_wheat_seeds",ModBlocks.NEBU_WHEAT,new Item.Properties().group(ModItemGroups.voxelitemoditems));
+	public static final Item EBUWHEAT = new ItemBase("nebu_wheat");
 	//need textures
 	public static final Item BRONZE_CHUNK = new ItemBase("bronze_chunk");
 	public static final Item BLACK_GEM = new ItemBase("black_gem");
@@ -155,9 +155,9 @@ public class ModItems {
 	
 	
 	//food
-//	public static final ItemFood ALPHA_BERRY = new FoodBerryAlpha("alpha_berry", 2, false);
-//	public static final ItemFood OMEGA_BERRY = new FoodBerryOmega("omega_berry", 2, false);
-	//public static final FoodItem CHEESE = new FoodItem("cheese",2,false);
+	public static final FoodItem ALPHA_BERRY = new FoodItem("alpha_berry",ModBlocks.ALPHA_BERRY_PLANT, 2, false);
+	public static final FoodItem OMEGA_BERRY = new FoodItem("omega_berry",ModBlocks.OMEGA_BERRY_PLANT, 2, false);
+	public static final FoodItem STARBUN = new FoodItem("star_bun",12,false);
 	public static final FoodItem EMPTYJAR = new FoodItem("empty_jar",2,false);
 	public static final FoodItem MINECRAFTEARTHGUMMY = new FoodItem("minecraft_earth_gummy",2,false);
 	public static final FoodItem ONION = new FoodItem("onion",2,false);
@@ -200,9 +200,9 @@ public class ModItems {
 	public static final Item BLUE_DUNGEON_KEY = new ItemBase("blue_dungeon_key");
 	public static final Item BLACK_STONE_DUNGEON_KEY = new ItemBase("black_stone_dungeon_key");
 	
-	public static final Item SUPER_CHARGED_AVOKINATE_HAMMER = new ToolHammer("super_charged_avokinate_hammer");
-	public static final Item CHARGED_AVOKINATE_HAMMER = new ToolHammer("charged_avokinate_hammer");
-	public static final Item AVOKINATE_HAMMER = new ToolHammer("avokinate_hammer");
+	public static final Item SUPER_CHARGED_AVOKINATE_HAMMER = new ToolHammer("super_charged_avokinate_hammer",12,0.8f,ModItemTier.CHARGED_AVOKINATE);
+	public static final Item CHARGED_AVOKINATE_HAMMER = new ToolHammer("charged_avokinate_hammer",9,1,ModItemTier.CHARGED_AVOKINATE);
+	public static final Item AVOKINATE_HAMMER = new ToolHammer("avokinate_hammer",6,1.3f,ModItemTier.AVOKINATE);
 	
 	public static final Item ANCIENT_PICKAXE = new ToolPickaxe("ancient_pickaxe",MATERIAL_AVOKINATE);
 	public static final Item AVOKINATE_SPEAR = new ToolSword("avokinate_spear",MATERIAL_AVOKINATE);
@@ -241,6 +241,14 @@ public class ModItems {
 	
 	//wings
 	public static final Item VOXELITE_WINGS = new ElytraItemBase("voxelite_wings");
+
+
+
+
+
+
+
+	public static final Item OGOE_BERRY = new BlockNamedItemBase("ogoe_berry",ModBlocks.OGOE_BUSH,new Item.Properties().food(new Food.Builder().fastToEat().hunger(2).saturation(2).setAlwaysEdible().build()));
 
 	
 	//reconds

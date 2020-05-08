@@ -2,9 +2,7 @@ package com.tricoeverfire.voxelite.entities.renderer;
 
 import com.tricoeverfire.voxelite.Main;
 import com.tricoeverfire.voxelite.entities.SlugEntity;
-import com.tricoeverfire.voxelite.entities.VoxivanEntity;
 import com.tricoeverfire.voxelite.entities.models.EntitySlugModel;
-import com.tricoeverfire.voxelite.entities.models.EntityVoxivanModel;
 
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;

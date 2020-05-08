@@ -5,7 +5,6 @@ import com.tricoeverfire.voxelite.biomes.generatorsettings.VoxeliteGeneratorSett
 import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.gen.OverworldChunkGenerator;
-import net.minecraft.world.gen.OverworldGenSettings;
 
 public class VoxeliteChunkGenerator extends OverworldChunkGenerator {
 

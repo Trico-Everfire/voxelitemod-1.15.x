@@ -1,5 +1,7 @@
 package com.tricoeverfire.voxelite.init;
 
+import java.util.Random;
+
 import com.tricoeverfire.voxelite.util.enummodhandler.ModEnchantmentType;
 
 import net.minecraft.enchantment.EnchantmentType;
@@ -26,8 +28,9 @@ public class ModItemGroups {//extends ItemGroup{
     public static final ItemGroup voxelitemodfoods = new ItemGroup(ItemGroup.GROUPS.length,"voxelitemod_foods") {
     	@Override
     	public ItemStack createIcon() {
-    		// TODO Auto-generated method stub
-    		return new ItemStack(ModItems.CUCUMBER);
+    		Random random = new Random();
+    		
+    		return random.nextInt() == 0 ? new ItemStack(ModItems.OMEGA_BERRY) : new ItemStack(ModItems.STARBUN);
     	}
     };
 	

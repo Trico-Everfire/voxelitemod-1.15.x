@@ -3,11 +3,9 @@ package com.tricoeverfire.voxelite.items;
 import javax.annotation.Nullable;
 
 import com.google.common.collect.ImmutableMap;
-import com.tricoeverfire.voxelite.init.ModBlocks;
 import com.tricoeverfire.voxelite.init.ModItemGroups;
 import com.tricoeverfire.voxelite.init.ModItems;
 
-import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.item.ItemFrameEntity;

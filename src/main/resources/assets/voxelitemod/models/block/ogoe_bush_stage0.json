@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "voxelitemod:block/ogoe_bush_stage0"
+    }
+}

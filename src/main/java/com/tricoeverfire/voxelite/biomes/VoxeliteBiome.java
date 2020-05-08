@@ -1,6 +1,5 @@
 package com.tricoeverfire.voxelite.biomes;
 
-import com.tricoeverfire.voxelite.biomes.features.ModFeatures;
 import com.tricoeverfire.voxelite.biomes.generator.VoxeliteChunkGenerator;
 import com.tricoeverfire.voxelite.biomes.generatorsettings.VoxeliteGeneratorSettings;
 import com.tricoeverfire.voxelite.init.ModBlocks;

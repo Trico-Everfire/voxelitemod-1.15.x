@@ -1,5 +1,6 @@
 package com.tricoeverfire.voxelite.init;
 
+import com.tricoeverfire.voxelite.tileentities.OWGTileEntity;
 import com.tricoeverfire.voxelite.tileentities.PhaserTileEntity;
 import com.tricoeverfire.voxelite.util.Reference;
 
@@ -17,4 +18,7 @@ public class ModTileEntityTypes {
 		TileEntityType.Builder.create(PhaserTileEntity::new, ModBlocks.HIDDENPHASERBLOCK).build(null)
 	);
 	
+	public static final RegistryObject<TileEntityType<OWGTileEntity>> OWGTILEENTITY = TILE_ENTITY_TYPE.register("owg_tile_entity", ()->
+	TileEntityType.Builder.create(OWGTileEntity::new, ModBlocks.HIDDENGLASSWALLING).build(null)	
+	);
 }

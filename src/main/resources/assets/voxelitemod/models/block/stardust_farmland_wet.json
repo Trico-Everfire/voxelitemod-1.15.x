@@ -1,0 +1,8 @@
+{
+    "parent": "block/template_farmland",
+    "textures": {
+        "particle": "voxelitemod:blocks/stardust_farmland_wet",
+        "dirt": "voxelitemod:blocks/stardust_dirt",
+        "top": "voxelitemod:blocks/stardust_farmland_wet"
+    }
+}

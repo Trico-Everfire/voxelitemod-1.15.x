@@ -7,6 +7,7 @@ import net.minecraft.item.Items;
 
 public class VoxivanLoveViolence extends Goal{
 	
+	@SuppressWarnings("unused")
 	private LivingEntity entity;
 
 

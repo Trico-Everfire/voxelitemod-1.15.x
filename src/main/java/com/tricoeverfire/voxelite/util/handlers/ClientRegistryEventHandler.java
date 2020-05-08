@@ -30,14 +30,13 @@ public class ClientRegistryEventHandler {
 		String a = tileEntity.getColor();
    	 int i;
    	 if(a=="") {
-   		// System.out.println(a);
-   		 //here's the fault
-   		  i = 0xffffff; //nteger.parseInt(a);
+
+   		  i = 0xffffff;
    	 } else if (a.contains("0x")) {
    	try {
    		i = Integer.decode(a);
    	} catch(NumberFormatException e) {
-   		//System.out.println(e);
+   	
    		i = 0xffffff;
    	}
    	 
@@ -46,23 +45,23 @@ public class ClientRegistryEventHandler {
    		  i = 0xffffff;
    	 }
 		
- //  	 System.out.println(i);
+
    	 
 		return i;
         } catch(Exception ex) {
-        //	System.out.println(ex);
+    
         	return 0xffffff;
         }
      };
 	
      public static final IItemColor mycolorsItem = (stack, pass)->{
-    	// System.out.println(stack.getOrCreateTag().getInt("color"));
+    
     	 String a = stack.getOrCreateTag().getString("color");
-    	// System.out.println(a);
+    	
     	 int i;
     	 if(a=="") {
-    		// System.out.println(a);
-    		  i = 0xffffff; //nteger.parseInt(a);
+    		
+    		  i = 0xffffff; 
     	 } else if (a.contains("0x")) {
     	try {
     		i = Integer.decode(a);
@@ -103,6 +102,7 @@ public class ClientRegistryEventHandler {
         Main.LOGGER.info("Registered Particle Factories");
     }
     
+
 
     
 }

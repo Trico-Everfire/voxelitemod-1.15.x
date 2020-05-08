@@ -3,7 +3,7 @@
         "particle": "voxelitemod:blocks/stardust_growth_top",
         "bottom": "minecraft:block/stone",
         "top": "voxelitemod:blocks/stardust_growth_overlay_top",
-        "side": "voxelitemod:blocks/stardust_growth_side",
+        "side": "minecraft:block/stone",
         "overlay": "voxelitemod:blocks/stardust_growth_overlay_side"
     },
     "elements": [

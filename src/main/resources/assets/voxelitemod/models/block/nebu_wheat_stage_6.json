@@ -1,0 +1,6 @@
+{
+"parent": "block/crop",
+"textures":{
+    "crop":"voxelitemod:blocks/nebu_wheat_phase_6"
+}
+}

@@ -7,6 +7,7 @@ import net.minecraft.state.properties.BlockStateProperties;
 public class ModStateProperties extends BlockStateProperties {
 	public static final BooleanProperty ITEMHELD = BooleanProperty.create("itemheld");
 	public static final BooleanProperty INVERSE = BooleanProperty.create("inverse");
+	public static final IntegerProperty AGE_0_4 = IntegerProperty.create("age", 0, 4);
 //	public static final IntegerProperty PHASER_COLOR_SUPPORT = IntegerProperty.create("color", 0, 256*256*256);
-	
+
 }

@@ -7,8 +7,10 @@ import java.util.function.Supplier;
 
 import com.google.common.collect.Sets;
 import com.tricoeverfire.voxelite.init.ModBlocks;
+import com.tricoeverfire.voxelite.init.ModDamageSource;
 import com.tricoeverfire.voxelite.init.ModEnchantments;
 import com.tricoeverfire.voxelite.init.ModItems;
+import com.tricoeverfire.voxelite.special.LiquidPhysics;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FlowingFluidBlock;
@@ -18,15 +20,12 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.item.ItemEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.fluid.FlowingFluid;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.IBlockReader;
@@ -36,7 +35,8 @@ import net.minecraft.world.World;
 public class LiquidVoxelite extends FlowingFluidBlock{
 
 	
-	public static DamageSource VoxDam = (new DamageSource("voxelized"));
+//	public static DamageSource VoxDam = (new DamageSource("voxelized"));
+	LiquidPhysics physics = new LiquidPhysics();
 	
 	@SuppressWarnings("deprecation")
 	protected LiquidVoxelite(FlowingFluid fluidIn, Properties builder) {
@@ -68,6 +68,17 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 	@Override
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		//entityIn.setVelocity(entityIn., y, z);
+	
+
+		BlockPos newposis = new BlockPos(entityIn);
+
+		if(pos.getX() == newposis.getX() && pos.getY() == newposis.getY() && pos.getZ() == newposis.getZ()) {
+	      physics.init(this.getFluid(), entityIn);
+		//  System.out.println("test");
+		  }
+		
+		
+		
 		if(entityIn instanceof LivingEntity) {
 	//		PlayerEntity ent = (PlayerEntity) entityIn;
 //			ent.inventory.mainInventory.forEach((itemstack)->{
@@ -101,10 +112,10 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 				
 				
 				
-				BlockPos newposis = new BlockPos(entityIn);
+				BlockPos newposis1 = new BlockPos(entityIn);
 
 
-				if(pos.getX() == newposis.getX() && pos.getY() == newposis.getY() && pos.getZ() == newposis.getZ()) {
+				if(pos.getX() == newposis1.getX() && pos.getY() == newposis1.getY() && pos.getZ() == newposis1.getZ()) {
 				//	System.out.println("true!");
 				
 				List<ItemStack> armor = (List<ItemStack>) entity.getArmorInventoryList();
@@ -263,7 +274,7 @@ public class LiquidVoxelite extends FlowingFluidBlock{
 				if(unos&&dos&&tres&&quadre) {
 					return;
 				}
-			entityIn.attackEntityFrom(VoxDam, start);
+			entityIn.attackEntityFrom(ModDamageSource.VOXDAM, start);
 			
 				} else {
 				return;

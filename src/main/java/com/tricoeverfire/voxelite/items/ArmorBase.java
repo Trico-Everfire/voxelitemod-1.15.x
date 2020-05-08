@@ -9,7 +9,6 @@ import com.tricoeverfire.voxelite.util.Reference;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.IArmorMaterial;
@@ -23,6 +22,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class ArmorBase extends ArmorItem{
 	
 	private final String textureName;
+	@SuppressWarnings("unused")
 	private final boolean hasMicroDamage;
 	public static boolean PlayerHoldingShift = false;
 	

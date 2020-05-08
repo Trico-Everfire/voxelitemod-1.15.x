@@ -5,10 +5,7 @@ import javax.annotation.Nullable;
 import com.tricoeverfire.voxelite.init.ModItemGroups;
 
 import net.minecraft.block.Block;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
 
 public class BlockItemBase extends BlockItem{
 

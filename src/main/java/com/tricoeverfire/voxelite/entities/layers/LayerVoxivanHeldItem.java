@@ -16,6 +16,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
+@SuppressWarnings("deprecation")
 public class LayerVoxivanHeldItem extends LayerRenderer<VoxivanEntity,EntityVoxivanModel<VoxivanEntity>>{
 
 	protected final MobRenderer<VoxivanEntity, EntityVoxivanModel<VoxivanEntity>> livingEntityRenderer;
@@ -24,6 +25,7 @@ public class LayerVoxivanHeldItem extends LayerRenderer<VoxivanEntity,EntityVoxi
 		super(livingEntityRendererIn);
 		this.livingEntityRenderer = livingEntityRendererIn;
 	}
+	
 	
 	
 	public void doRenderLayer(LivingEntity entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
@@ -37,7 +39,8 @@ public class LayerVoxivanHeldItem extends LayerRenderer<VoxivanEntity,EntityVoxi
 
 	            if (this.livingEntityRenderer.getEntityModel().isChild)
 	            {
-	                float f = 0.5F;
+	                @SuppressWarnings("unused")
+					float f = 0.5F;
 	                GlStateManager.translated(0.0F, 0.75F, 0.0F);
 	                GlStateManager.scaled(0.5F, 0.5F, 0.5F);
 	            }
@@ -49,17 +52,17 @@ public class LayerVoxivanHeldItem extends LayerRenderer<VoxivanEntity,EntityVoxi
 		
 	}
 	
-    @SuppressWarnings("unused")
+    
 	private void renderHeldItem(LivingEntity p_188358_1_, ItemStack p_188358_2_, ItemCameraTransforms.TransformType p_188358_3_, HandSide handSide)
     {
         if (!p_188358_2_.isEmpty())
         {
             GlStateManager.pushMatrix();
 
-            if (p_188358_1_.isShiftKeyDown())
-            {
-                GlStateManager.translated(0.0F, 0.2F, 0.0F);
-            }
+//            if (p_188358_1_.isShiftKeyDown())
+//            {
+//                GlStateManager.translated(0.0F, 0.2F, 0.0F);
+//            }
             // Forge: moved this call down, fixes incorrect offset while sneaking.
           //  this.translateToHand(handSide);
             GlStateManager.rotatef(-110.0F, 1.0F, 0.0F, 0.0F);

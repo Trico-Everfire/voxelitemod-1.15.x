@@ -78,11 +78,12 @@ public class Main
         ModFluids.BLOCKS.register(modEventBus);
         ModFluids.ITEMS.register(modEventBus);
         ModItems.DEFERREDITEMS.register(modEventBus);
+      //  ModBlocks.DEFERREDBLOCKS.register(modEventBus);
         ModParticles.PARTICLES.register(modEventBus);
         ModBiomes.BIOMES.register(modEventBus);
         ModEntities.ENTITIES.register(modEventBus);
         // Register ourselves for server and other game events we are interested in
-        
+       
         MinecraftForge.EVENT_BUS.register(this);
         
 
@@ -115,6 +116,9 @@ public class Main
     	RenderTypeLookup.setRenderLayer(ModBlocks.STARDUST_SAPLING, RenderType.getCutout());
     	RenderTypeLookup.setRenderLayer(ModBlocks.HIDDENGLASSWALLING, RenderType.getCutout());
     	RenderTypeLookup.setRenderLayer(ModBlocks.HIDDENPHASERBLOCK, RenderType.getCutout());
+    	RenderTypeLookup.setRenderLayer(ModBlocks.NEBU_WHEAT, RenderType.getCutout());
+    	RenderTypeLookup.setRenderLayer(ModBlocks.ALPHA_BERRY_PLANT, RenderType.getCutout());
+    	RenderTypeLookup.setRenderLayer(ModBlocks.OMEGA_BERRY_PLANT, RenderType.getCutout());
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
     }
 

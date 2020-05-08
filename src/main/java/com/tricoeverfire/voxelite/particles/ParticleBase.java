@@ -1,7 +1,5 @@
 package com.tricoeverfire.voxelite.particles;
 
-import java.util.Random;
-
 import com.tricoeverfire.voxelite.util.math.ModMathHelper;
 
 import net.minecraft.client.particle.IAnimatedSprite;

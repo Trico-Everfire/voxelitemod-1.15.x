@@ -5,7 +5,6 @@ import java.util.List;
 import com.tricoeverfire.voxelite.init.ModItems;
 
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

@@ -124,7 +124,7 @@
 "death.attack.voxelized":"%s succumbed to Voxelization.",
 "death.attack.voxelite_rain1":"%s eroded away in the Voxelite rain.",
 "death.attack.voxelite_rain2":"%s tried to take a shower",
-"death.attack.hammer_slam":"%s got slammed to death by %p",
+"death.attack.hammer_slam":"%1$s got slammed to death by %2$s",
 
 "generator.voxelite":"Voxelite Biome"
 }

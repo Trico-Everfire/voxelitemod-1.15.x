@@ -21,7 +21,6 @@ import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -71,7 +70,7 @@ public class StardustSapling extends BushBlock implements IGrowable {
 			
 		} else {
 			if(!ForgeEventFactory.saplingGrowTree(worldIn, rand, pos)) return;
-			this.TREE.get().func_225545_a_(worldIn, worldIn.getChunkProvider().getChunkGenerator(), pos, state, rand);
+			this.TREE.get().place(worldIn, worldIn.getChunkProvider().getChunkGenerator(), pos, state, rand);
 		}
 		
 	}

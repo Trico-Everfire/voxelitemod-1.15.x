@@ -6,9 +6,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.tricoeverfire.voxelite.init.ModBiomes;
 import com.tricoeverfire.voxelite.init.ModBlocks;
-import com.tricoeverfire.voxelite.init.ModFluids;
 import com.tricoeverfire.voxelite.init.ModItems;
-import com.tricoeverfire.voxelite.special.LiquidPhysics;
 import com.tricoeverfire.voxelite.util.Reference;
 
 import net.minecraft.client.renderer.IRenderTypeBuffer;
@@ -22,6 +20,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.client.event.RenderTooltipEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -115,8 +114,6 @@ public class EventHandler {
     	LivingEntity entity = event.getEntityLiving();
     //	System.out.println("aaa");
     	
-      LiquidPhysics physics = new LiquidPhysics(entity,ModFluids.voxelfuildssource);
-      physics.init();
     	
     	if(entity instanceof PlayerEntity) {
     		
@@ -131,6 +128,36 @@ public class EventHandler {
     	}
     }
   }
+    
+    @SubscribeEvent
+    public static void onSetupAngles(RenderPlayerEvent.Post event) {
+
+//    	int i = LivingRenderer.getPackedOverlay(event.getPlayer(), 0.0F);
+//    	IVertexBuilder ivertexbuilder = event.getBuffers().getBuffer(RenderType.getEntitySolid(((AbstractClientPlayerEntity) event.getPlayer()).getLocationSkin()));	        
+//    	for(int j = 0; j < 2; ++j) {
+//    		
+//    	MatrixStack matrixStackIn = event.getMatrixStack();
+//        float f = MathHelper.lerp(event.getPartialRenderTick(), event.getPlayer().prevRotationYaw, event.getPlayer().rotationYaw) - MathHelper.lerp(event.getPartialRenderTick(), event.getPlayer().prevRenderYawOffset, event.getPlayer().renderYawOffset);
+//        float f1 = MathHelper.lerp(event.getPartialRenderTick(), event.getPlayer().prevRotationPitch, event.getPlayer().rotationPitch);
+//        matrixStackIn.push();
+//
+//        
+//        matrixStackIn.rotate(Vector3f.YP.rotationDegrees(f));
+//        matrixStackIn.rotate(Vector3f.XP.rotationDegrees(f1));
+//        matrixStackIn.translate((double)(0.375F * (float)(j * 2 - 1)), 0.0D, 0.0D);
+//        matrixStackIn.translate(0.0D, -0.375D, 0.0D);
+//        matrixStackIn.rotate(Vector3f.XP.rotationDegrees(-f1));
+//        matrixStackIn.rotate(Vector3f.YP.rotationDegrees(-f));
+//        
+//        float f2 = 1.3333334F;
+//        matrixStackIn.scale(1.3333334F, 1.3333334F, 1.3333334F);
+//        matrixStackIn.scale(-1, 1, -1);
+//      //  matrixStackIn.translate(p_227861_1_, p_227861_3_, p_227861_5_);
+//        event.getRenderer().getEntityModel().renderEars(matrixStackIn, ivertexbuilder, event.getLight(), i);
+//        matrixStackIn.pop();
+//     }
+
+    }
 	
 	
 }

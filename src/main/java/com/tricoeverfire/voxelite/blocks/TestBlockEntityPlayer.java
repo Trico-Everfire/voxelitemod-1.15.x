@@ -7,7 +7,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.ActionResultType;
@@ -34,6 +33,7 @@ public class TestBlockEntityPlayer extends BlockBase{
 	
 
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
 		super.tick(state, worldIn, pos, rand);
@@ -54,6 +54,7 @@ public class TestBlockEntityPlayer extends BlockBase{
 		
 	}
 	
+@SuppressWarnings("deprecation")
 @Override
 public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
 	
@@ -86,7 +87,7 @@ public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Rand
 		
 		List<PlayerEntity> player = world.getEntitiesWithinAABB(PlayerEntity.class, new AxisAlignedBB(x,y,z,x+50,y+50,z+50));
 	
-		for(Entity entity : player) {
+		for(@SuppressWarnings("unused") Entity entity : player) {
 			//entity.setNoGravity(false);
 		//	entity.setMotion(entity.getMotion().x, entity.getMotion().y + 2 , entity.getMotion().z);
 		//System.out.println("hi");

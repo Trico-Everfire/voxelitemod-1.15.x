@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-	"voxelitemod:liquid_voxelite_still",
-	"voxelitemod:liquid_voxelite_flow"
+
   ]
 }

@@ -40,8 +40,6 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class PhaserBlock extends AbstractGlassBlock{
 	protected final @Nullable Item item;
@@ -251,7 +249,7 @@ public class PhaserBlock extends AbstractGlassBlock{
 			
 			}
 			
-			double dubby = (double) pos.getY() - 1.5;
+			//double dubby = (double) pos.getY() - 1.5;
 			//System.out.println(dubby);
 			BlockPos posright = new BlockPos((double) pos.getX() - 1d,(double) pos.getY() - 1d,(double) pos.getZ() - 1d);
 			AxisAlignedBB box = new AxisAlignedBB(posright).expand(2, 4, 2);

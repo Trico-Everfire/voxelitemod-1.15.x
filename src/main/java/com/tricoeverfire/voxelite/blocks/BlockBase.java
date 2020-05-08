@@ -149,10 +149,6 @@ public static Properties changeBlockProperties(Properties properties) {
 	
 		thisblock.setRegistryName(Main.location(name));
 		
-		//	setCreativeTab(Main.voxelitemod);
-		//setCreativeTab();
-		
-		
 		ModBlocks.BLOCKS.add(this);
 		ModItems.ITEMS.add(thisblock);
 		//Item item = new ItemBlock();
@@ -161,6 +157,17 @@ public static Properties changeBlockProperties(Properties properties) {
 
 	
 
+
+	public BlockBase(String name, Properties from) {
+		super(from);
+		setRegistryName(Main.location(name));
+		Item.Properties blockItemProperties = new Item.Properties();
+		blockItemProperties.group(ModItemGroups.voxelitemodblocks);
+		Item thisblock = new BlockItem(this,blockItemProperties);
+		thisblock.setRegistryName(Main.location(name));
+		ModBlocks.BLOCKS.add(this);
+		ModItems.ITEMS.add(thisblock);
+	}
 
 	protected void setSoundType(SoundType type){
 		BlockBase.sound = type;
@@ -247,6 +254,8 @@ public static Properties changeBlockProperties(Properties properties) {
 	
 	//isn't actually used, but it's rather used for backwards compatability, if you have a lot of blocks
 	//you just copy this in -Trico Everfire.
+	 
+	 //this was a bad idea, frick this class -Trico Everfire.
 	public void setUnlocalizedName(String Name) {
 		
 	}

@@ -131,7 +131,7 @@ public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity play
 	int dmg =  player.getHeldItem(hand).getMaxDamage() - player.getHeldItem(hand).getDamage();
 	//Console.println(dmg);
 	
-	if(player.isShiftKeyDown() && dmg >= 10) {
+	if(player.isSneaking() && dmg >= 10) {
 		
 		float pwr = 1;
 		if(Direction.NORTH == player.getHorizontalFacing()) {
@@ -175,7 +175,7 @@ public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity play
 	player.getCooldownTracker().setCooldown(player.getHeldItem(hand).getItem(), 70);
 	return ActionResult.resultSuccess(player.getHeldItem(hand));
 		
-	} else if (player.isShiftKeyDown()) {
+	} else if (player.isSneaking()) {
 	
 		for(int i = 0; i < player.inventory.getSizeInventory(); i++) {
 			if(player.inventory.getStackInSlot(i).getItem() == ModItems.REDSTONE_CHARGE) {

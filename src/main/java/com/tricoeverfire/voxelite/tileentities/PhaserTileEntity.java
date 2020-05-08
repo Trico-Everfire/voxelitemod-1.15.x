@@ -45,7 +45,7 @@ public class PhaserTileEntity extends TileEntity implements ITickableTileEntity{
 	@Override
 	public void read(CompoundNBT compound) {
 		super.read(compound);
-		System.out.println(compound);
+		//System.out.println(compound);
 		
 		this.Inverse = compound.getBoolean("inverse");
 		this.setColor(compound.getString("color")); 

@@ -14,9 +14,12 @@ import com.tricoeverfire.voxelite.blocks.BlockLogBase;
 import com.tricoeverfire.voxelite.blocks.BlockPillarBase;
 import com.tricoeverfire.voxelite.blocks.BlockStairBase;
 import com.tricoeverfire.voxelite.blocks.BlockWallBase;
+import com.tricoeverfire.voxelite.blocks.CropsBlockBase;
+import com.tricoeverfire.voxelite.blocks.FarmlandBlockBase;
 import com.tricoeverfire.voxelite.blocks.IronFence;
 import com.tricoeverfire.voxelite.blocks.IronFenceGate;
 import com.tricoeverfire.voxelite.blocks.LightBulb;
+import com.tricoeverfire.voxelite.blocks.OgoeBushBlock;
 import com.tricoeverfire.voxelite.blocks.PhaserBlock;
 import com.tricoeverfire.voxelite.blocks.ReinforcedGlass;
 import com.tricoeverfire.voxelite.blocks.RotatableHiddenGlassBlock;
@@ -25,6 +28,7 @@ import com.tricoeverfire.voxelite.blocks.StardustGrowth;
 import com.tricoeverfire.voxelite.blocks.StardustSapling;
 import com.tricoeverfire.voxelite.blocks.TestBlockEntityPlayer;
 import com.tricoeverfire.voxelite.blocks.VoxelizedOre;
+import com.tricoeverfire.voxelite.util.enummodhandler.ModPlantType;
 import com.tricoeverfire.voxelite.world.feature.StardustTree;
 
 import net.minecraft.block.Block;
@@ -34,7 +38,7 @@ import net.minecraft.block.material.Material;
 public class ModBlocks {
 
 	public static final List<Block> BLOCKS = new ArrayList<Block>();
-	
+//	public static final DeferredRegister<Block> DEFERREDBLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, Reference.MOD_ID);
 	
 	//materials
 //	public static final Material VOXELITELIQUID = (new MaterialLiquid(Material.IRON.getMaterialMapColor())).setNoPushMobility();;
@@ -59,7 +63,18 @@ public class ModBlocks {
 	public static final IronFenceGate IRON_FENCE_GATE = new IronFenceGate("iron_fence_gate");
 	public static final Block IRON_FENCE = new IronFence("iron_fence");
 	public static final Block IRON_WALL = new BlockWallBase("iron_wall",Blocks.IRON_BLOCK);
-	//public static final Block DIRT_WALL = new BlockWallBase("dirt_wall",Blocks.DIRT,true);
+	
+	public static final Block STARDUST_DIRT = new BlockBase("stardust_dirt",Block.Properties.from(Blocks.DIRT));
+	public static final Block FARSTONE = new BlockBase("far_stone",Material.EARTH);	
+	public static final Block STARDUST_FARMLAND = new FarmlandBlockBase("stardust_farmland", ModBlocks.STARDUST_DIRT ,Block.Properties.from(Blocks.FARMLAND));
+	
+	public static final Block OGOE_BUSH = new OgoeBushBlock("ogoe_bush",Block.Properties.from(Blocks.SWEET_BERRY_BUSH));
+//	public static final RegistryObject<Block> OGOE_BUSH = DEFERREDBLOCKS.register("ogoe_bush", ()->
+//		new OgoeBushBlock("ogoe_bush",Block.Properties.from(Blocks.SWEET_BERRY_BUSH))
+//	);
+	public static final Block NEBU_WHEAT = new CropsBlockBase("nebu_wheat",new Block[] {ModBlocks.STARDUST_FARMLAND},ModItems.NEBUSEEDS,ModPlantType.STARDUST_PLANTS,Block.Properties.from(Blocks.WHEAT));
+	
+	
 	
 	public static final BlockBase BLACKSTONEBRICK = new BlockBase("black_stone_brick", Material.ROCK);
 
@@ -91,10 +106,7 @@ public class ModBlocks {
 
 	//hidden/unassigned
 	public static final Block HIDDENGLASSWALLING = new RotatableHiddenGlassBlock("blue_dungeon_stone_hidden_glass", ModBlocks.REINFORCED_GLASS);
-
 	public static final Block HIDDENPHASERBLOCK = new PhaserBlock("phaser_block", Material.ROCK, ModItems.PHASER_CRYSTAL, true);
-//	public static final Block HIDDENPHASERBLOCKINVERSE = new PhaserBlock("phaser_block_inverse", Material.ROCK, ModItems.PHASER_CRYSTAL, true, true);
-	
 	
 	public static final Block GLOWINGDUNGEONCEILINGBLOCK = new RoyalLight("glowing_dungeon_ceiling_block", Material.ROCK);
 	public static final Block KITSUNEBLOCK = new BlockBase("kitsune_block", Material.ROCK);
@@ -112,8 +124,8 @@ public class ModBlocks {
 	//public static final Block LIQUID_VOXELITE = new FlowingLiquidBlockBase("liquid_voxelite",new VoxeliteLiquid.Source());
 	
 	//plants
-	//public static final Block ALPHA_BERRY_PLANT = new BlockAlphaPlant("alpha_berry_plant");
-	//public static final Block OMEGA_BERRY_PLANT = new BlockOmegaPlant("omega_berry_plant");
+	public static final Block ALPHA_BERRY_PLANT = new CropsBlockBase("alpha_berry_plant",new Block[] {ModBlocks.STARDUST_FARMLAND},ModItems.ALPHA_BERRY,ModPlantType.STARDUST_PLANTS,true,Block.Properties.from(Blocks.WHEAT));
+	public static final Block OMEGA_BERRY_PLANT = new CropsBlockBase("omega_berry_plant",new Block[] {ModBlocks.STARDUST_FARMLAND},ModItems.OMEGA_BERRY,ModPlantType.STARDUST_PLANTS,true,Block.Properties.from(Blocks.WHEAT));
 	
 	//guiables
 //	public static final Block GEARBENCH = new BlockGearBench("gearbench",Material.WOOD);

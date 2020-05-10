@@ -66,7 +66,7 @@ public class ModItems {
 
 	public static final RegistryObject<SpawnEggBase> VOXIVANSPAWNEGG = DEFERREDITEMS.register("voxivan_spawn_egg", () -> new SpawnEggBase(ModEntities.VOXIVAN_ENTITY, 0xFFFFFF, 0xf07fae, new Item.Properties().group(ModItemGroups.voxelitemoditems)));
 	public static final RegistryObject<SpawnEggBase> SLUGSPAWNEGG = DEFERREDITEMS.register("slug_spawn_egg", () -> new SpawnEggBase(ModEntities.SLUG_ENTITY, 0xFFFFFF, 0x9ef4ff, new Item.Properties().group(ModItemGroups.voxelitemoditems)));
-
+	public static final RegistryObject<SpawnEggBase> SKELEBATSPAWNEGG = DEFERREDITEMS.register("skelebat_spawn_egg", () -> new SpawnEggBase(ModEntities.SKELEBAT_ENTITY, 0xFFFFFF, 0xb8b8b8, new Item.Properties().group(ModItemGroups.voxelitemoditems)));
 	
 //	public static final GemBase BLANKSLATE = new GemBase("blue_breaker_blade","breaker_blade",0x0048ff,2,3000,4.0F,4.0F,-1.4F,11F);
 	

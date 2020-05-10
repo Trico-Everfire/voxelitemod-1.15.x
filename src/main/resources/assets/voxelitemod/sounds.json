@@ -22,5 +22,11 @@
      "subtitle": "entity.slug.slugsing",
      "sounds":[{"name": "voxelitemod:entity/slug/slugsing","streaming":true}]
     
+    },
+            "entity.skelebat.takeoff":{
+     "catagory":"entity",
+     "subtitle": "entity.skelebat.takeoff",
+     "sounds":[{"name": "voxelitemod:entity/skelebat/skelebat_takeoff","streaming":true}]
+    
     }
 }

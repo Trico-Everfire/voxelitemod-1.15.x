@@ -26,4 +26,8 @@ public class ModSounds {
 	public static final RegistryObject<SoundEvent> SLUGDEATH = SOUNDS.register("entity.slug.death", ()->
 	new SoundEvent(Main.location("entity.slug.death"))
 	);
+	
+	public static final RegistryObject<SoundEvent> SKELEBAT_TAKEOFF = SOUNDS.register("entity.skelebat.takeoff", ()->
+	new SoundEvent(Main.location("entity.skelebat.takeoff"))
+	);
 }

@@ -1,6 +1,7 @@
 package com.tricoeverfire.voxelite.init;
 
 import com.tricoeverfire.voxelite.Main;
+import com.tricoeverfire.voxelite.entities.SkelebatEntity;
 import com.tricoeverfire.voxelite.entities.SlugEntity;
 import com.tricoeverfire.voxelite.entities.VoxivanEntity;
 import com.tricoeverfire.voxelite.util.Reference;
@@ -17,6 +18,7 @@ public class ModEntities {
 	
 	public static final RegistryObject<EntityType<VoxivanEntity>> VOXIVAN_ENTITY = ENTITIES.register("voxivan", ()-> EntityType.Builder.<VoxivanEntity>create(VoxivanEntity::new, EntityClassification.MONSTER).size(0.8f,2.4f).build(Main.location("voxivan").toString())); //create(VoxivanEntity::new, EntityClassification.MONSTER})
 	public static final RegistryObject<EntityType<SlugEntity>> SLUG_ENTITY = ENTITIES.register("slug", ()-> EntityType.Builder.<SlugEntity>create(SlugEntity::new, EntityClassification.AMBIENT).size(0.4f,0.4f).build(Main.location("slug").toString()));
+	public static final RegistryObject<EntityType<SkelebatEntity>> SKELEBAT_ENTITY = ENTITIES.register("skelebat", ()-> EntityType.Builder.<SkelebatEntity>create(SkelebatEntity::new, EntityClassification.MONSTER).size(0.5F, 0.9F).build(Main.location("skelebat").toString()));
 	
 //	public final NonNullLazy<EntityType<VoxivanEntity>> spellBallInit = NonNullLazy.of(() -> EntityType.Builder.<VoxivanEntity>create(VoxivanEntity::new, EntityClassification.MONSTER)
 //            .size(0.8f,2.4f)

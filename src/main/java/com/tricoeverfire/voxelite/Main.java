@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.tricoeverfire.voxelite.commands.CommandsAnnex;
+import com.tricoeverfire.voxelite.entities.renderer.SkelebatEntityRenderer;
 import com.tricoeverfire.voxelite.entities.renderer.SlugEntityRenderer;
 import com.tricoeverfire.voxelite.entities.renderer.VoxivanEntityRenderer;
 import com.tricoeverfire.voxelite.init.ModBiomes;
@@ -107,6 +108,7 @@ public class Main
     	
     	RenderingRegistry.registerEntityRenderingHandler(ModEntities.VOXIVAN_ENTITY.get(), VoxivanEntityRenderer::new);
     	RenderingRegistry.registerEntityRenderingHandler(ModEntities.SLUG_ENTITY.get(), SlugEntityRenderer::new);
+    	RenderingRegistry.registerEntityRenderingHandler(ModEntities.SKELEBAT_ENTITY.get(), SkelebatEntityRenderer::new);
     	RenderTypeLookup.setRenderLayer(ModBlocks.REINFORCED_GLASS, RenderType.getCutout());
     	RenderTypeLookup.setRenderLayer(ModBlocks.CRACKED_REINFORCED_GLASS, RenderType.getCutout());
     	RenderTypeLookup.setRenderLayer(ModBlocks.BLACKSTONEDOOR, RenderType.getCutout());
@@ -197,6 +199,7 @@ public class Main
         @SubscribeEvent
         public static void onBiomeRegistry(final RegistryEvent.Register<Biome> biomeRegistryEvent) {
         	ModBiomes.registerBiomes();
+        	
         	//biomeRegistryEvent.getRegistry().register(value);
         }
         
